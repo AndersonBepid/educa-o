@@ -8,6 +8,10 @@
 
 import UIKit
 
-class Escola: NSObject {
-
+class Escola {
+    
+    var nome : String!
+    var rede : String!
+    var email : String!
+    
 }
