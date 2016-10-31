@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.update(_:)), name:NSNotification.Name(rawValue: "update"), object: self.escolasCidade)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.update(_:)), name:NSNotification.Name(rawValue: "update"), object: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -29,17 +29,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let escolasCidade = self.escolasCidade {
+            return escolasCidade.count
+        }
         return 0
     }
     
     func update(_ notification : NSNotification) {
-        print("ok")
+        
+        self.escolasCidade = notification.object as? [Escola]
+        self.escolasTB.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
         //Handler
+        cell.textLabel?.text = self.escolasCidade?[indexPath.row].nome
         
         return cell
     }
