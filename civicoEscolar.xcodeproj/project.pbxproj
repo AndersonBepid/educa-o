@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645E89121DCB747D00D5C43B /* CellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89111DCB747D00D5C43B /* CellHome.swift */; };
+		645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89131DCB836F00D5C43B /* DetalheController.swift */; };
 		647784531DCAAB0700F2922D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647784521DCAAB0700F2922D /* HomeController.swift */; };
 		64D0957E1DCAE0000057B715 /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957D1DCAE0000057B715 /* Escola.swift */; };
 		64D095801DCAE3FF0057B715 /* EscolaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		645E89111DCB747D00D5C43B /* CellHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHome.swift; sourceTree = "<group>"; };
+		645E89131DCB836F00D5C43B /* DetalheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheController.swift; sourceTree = "<group>"; };
 		647784521DCAAB0700F2922D /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		64D0957D1DCAE0000057B715 /* Escola.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Escola.swift; sourceTree = "<group>"; };
 		64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolaStore.swift; sourceTree = "<group>"; };
@@ -43,11 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		645E89101DCB746700D5C43B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				645E89111DCB747D00D5C43B /* CellHome.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		647784541DCAAC8000F2922D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */,
 				647784521DCAAB0700F2922D /* HomeController.swift */,
+				645E89131DCB836F00D5C43B /* DetalheController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -80,6 +93,7 @@
 		64DCF4371DC821D7007CC9D5 /* civicoEscolar */ = {
 			isa = PBXGroup;
 			children = (
+				645E89101DCB746700D5C43B /* View */,
 				64D0957C1DCADFF50057B715 /* Model */,
 				647784541DCAAC8000F2922D /* Controller */,
 				64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */,
@@ -119,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Thiago Vinhote";
 				TargetAttributes = {
 					64DCF4341DC821D7007CC9D5 = {
@@ -167,8 +181,10 @@
 			files = (
 				647784531DCAAB0700F2922D /* HomeController.swift in Sources */,
 				64D0957E1DCAE0000057B715 /* Escola.swift in Sources */,
+				645E89121DCB747D00D5C43B /* CellHome.swift in Sources */,
 				64DCF4411DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld in Sources */,
 				64DCF4391DC821D7007CC9D5 /* AppDelegate.swift in Sources */,
+				645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */,
 				64D095801DCAE3FF0057B715 /* EscolaStore.swift in Sources */,
 				64DCF4501DC829A4007CC9D5 /* BuscaController.swift in Sources */,
 			);
@@ -214,6 +230,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -263,6 +280,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

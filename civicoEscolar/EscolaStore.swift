@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class EscolaStore: NSObject {
 
@@ -17,19 +18,19 @@ class EscolaStore: NSObject {
         super.init()
     }
     
-    func fetchEscola(completion: @escaping (_ escolas: [Escola]?, _ error: Error?) -> Void) -> (){
+    func fetchEscola(_ location: CLLocation, completion: @escaping (_ escolas: [Escola]?, _ error: Error?) -> Void) -> (){
         //-3.029961, -59.979305
         //-3.117034, -60.025780 - original
-        let lat = -3.029961
-        let long = -59.979305
-        let stringUrl = "\(self.baseUrl)/rest/escolas/latitude/\(lat)/longitude/\(long)/raio/1?quantidadeDeItens=0"
+//        let lat = -3.029961
+//        let long = -59.979305
+        let stringUrl = "\(self.baseUrl)/rest/escolas/latitude/\(location.coordinate.latitude)/longitude/\(location.coordinate.longitude)/raio/1?quantidadeDeItens=0"
         guard let url = URL(string: stringUrl) else {
             return
         }
         
         URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             if error != nil {
-                print(error)
+                print(error!)
                 completion(nil, error)
                 return
             }
