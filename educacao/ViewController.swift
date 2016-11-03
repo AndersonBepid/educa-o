@@ -47,13 +47,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Handler
         cell.textLabel?.text = self.escolasCidade?[indexPath.row].nome
         
+        if (self.escolasCidade?[indexPath.row].temQuadraEsporteCoberta)! {
+            cell.detailTextLabel?.text = "Sim"
+        }else {
+            cell.detailTextLabel?.text = "Não"
+        }
+        
         return cell
     }
 
     @IBAction func getInfo() {
         
         let escola = EscolaStore.singleton
-        escola.getEscolasCidade(uf: self.ufTF.text!, cidade: self.cidadeTF.text!)
+        escola.getEscolasCidade(uf: self.ufTF.text!, cidade: self.cidadeTF.text!){ (escolas: [Escola]) in
+            self.escolasCidade = escolas
+            self.escolasTB.reloadData()
+        }
     }
     
     

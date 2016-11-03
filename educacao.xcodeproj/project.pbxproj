@@ -14,6 +14,7 @@
 		A0115C311DC53C23005DEE9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0115C2F1DC53C23005DEE9C /* LaunchScreen.storyboard */; };
 		A0115C3C1DC545C3005DEE9C /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0115C3B1DC545C3005DEE9C /* Escola.swift */; };
 		A0115C3E1DC54DC0005DEE9C /* EscolaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0115C3D1DC54DC0005DEE9C /* EscolaStore.swift */; };
+		A0F147701DCB08C000256529 /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1476F1DCB08C000256529 /* Endereco.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A0115C321DC53C23005DEE9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0115C3B1DC545C3005DEE9C /* Escola.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Escola.swift; sourceTree = "<group>"; };
 		A0115C3D1DC54DC0005DEE9C /* EscolaStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolaStore.swift; sourceTree = "<group>"; };
+		A0F1476F1DCB08C000256529 /* Endereco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				A0115C3B1DC545C3005DEE9C /* Escola.swift */,
 				A0115C3D1DC54DC0005DEE9C /* EscolaStore.swift */,
+				A0F1476F1DCB08C000256529 /* Endereco.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F147701DCB08C000256529 /* Endereco.swift in Sources */,
 				A0115C3E1DC54DC0005DEE9C /* EscolaStore.swift in Sources */,
 				A0115C291DC53C23005DEE9C /* ViewController.swift in Sources */,
 				A0115C3C1DC545C3005DEE9C /* Escola.swift in Sources */,
@@ -334,6 +338,7 @@
 				A0115C371DC53C23005DEE9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
