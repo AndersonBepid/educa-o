@@ -10,9 +10,23 @@ import UIKit
 
 class Infraestutura: NSObject {
     
-    var temEducacaoJovemAdulto: String?
-    var temEducacaoIndigena: String?
-    var atendeEducacaoEspecializada: String?
+    var temQuadraEsporteCoberta : String?
+    var temQuadraEsporteDescoberta : String?
+    var temLaboratorioInformatica : String?
+    var temLaboratorioCiencias : String?
+    var temParqueInfantil : String?
+    var temBiblioteca : String?
+    var temAreaVerde : String?
+    var temBercario : String?
+    var temAcessibilidade : String?
+    var temCreche : String?
+    var temEnsinoFundamental : String?
+    var temEnsinoMedioProfissional : String?
+    var temEnsinoMedioIntegrado : String?
+    var temEducacaoJovemAdulto : String?
+    var temEducacaoIndigena : String?
+    var ofereceAlimentacao : String?
+    var atendeEducacaoEspecializada : String?
     
     convenience init(dictionary: [String: Any]) {
         self.init()
@@ -28,7 +42,6 @@ class Infraestutura: NSObject {
 
 class Endereco: NSObject {
     
-    var endereco: String?
     var cep: String?
     var descricao: String?
     var bairro: String?
@@ -45,6 +58,12 @@ class Endereco: NSObject {
             super.setValue(value, forKey: key)
         }
     }
+    
+    override var description: String {
+        get {
+            return "\(self.descricao) \(self.bairro) \(self.municipio) \(self.uf)"
+        }
+    }
 }
 
 class Escola: NSObject {
@@ -55,6 +74,7 @@ class Escola: NSObject {
     var telefone: String?
     var endereco: Endereco?
     var infraestrutura: Infraestutura?
+    var ideb : Float?
     
     convenience init(dictionary: [String: Any]) {
         self.init()
@@ -79,7 +99,7 @@ class Escola: NSObject {
     
     override var description: String {
         get {
-            return "\(self.nome), \(self.rede)"
+            return "\(self.nome), \(self.rede), \(self.codEscola)"
         }
     }
 }

@@ -19,10 +19,6 @@ class HomeController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.managerLocation.delegate = self
-        self.managerLocation.requestAlwaysAuthorization()
-        self.managerLocation.requestWhenInUseAuthorization()
-        
         self.collectionView?.backgroundColor = UIColor(white: 0.95, alpha: 1)
         self.collectionView?.register(CellHome.self, forCellWithReuseIdentifier: self.cellId)
         self.collectionView?.alwaysBounceVertical = true
@@ -39,11 +35,11 @@ class HomeController: UICollectionViewController {
     
     private func fetchEscolas() {
 //        let cord = CLLocation(latitude: -3.011923, longitude: -59.964847)
-        let cord1 = CLLocation(latitude: -3.007209, longitude: -59.973613)
+        //let cord1 = CLLocation(latitude: -3.007209, longitude: -59.973613)
 //        guard let localizacao = self.managerLocation.location else {
 //            return
 //        }
-        EscolaStore.singleton.fetchEscola(cord1) { (escolas: [Escola]?, error: Error?) in
+        EscolaStore.singleton.fetchEscola(Endereco()) { (escolas: [Escola]?, error: Error?) in
             if error != nil{
                 print(error!)
                 return
@@ -51,7 +47,15 @@ class HomeController: UICollectionViewController {
             
             self.escolas = escolas
             self.collectionView?.reloadData()
-            print(escolas!)
+            //print(escolas!)
+        }
+    }
+    
+    private func fetchIdeb(codEscola: NSNumber?) {
+        
+        EscolaStore.singleton.fetchIdeb(codEscola) { (ideb, error) in
+        
+            //print(ideb)
         }
     }
     
@@ -79,6 +83,8 @@ class HomeController: UICollectionViewController {
         let escola = self.escolas?[indexPath.item]
         cell.escola = escola
         
+        self.fetchIdeb(codEscola: escola?.codEscola)
+        
         return cell
     }
     
@@ -87,14 +93,6 @@ class HomeController: UICollectionViewController {
         detalhe.escola = self.escolas?[indexPath.item]
         self.navigationController?.pushViewController(detalhe, animated: true)
     }
-}
-
-extension HomeController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations.first?.coordinate)
-    }
-    
 }
 
 extension HomeController: UICollectionViewDelegateFlowLayout {
