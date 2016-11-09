@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+let cacheIDEB: NSCache<NSNumber, Ideb> = NSCache<NSNumber, Ideb>()
+
 class EscolaStore: NSObject {
 
     static let singleton: EscolaStore = EscolaStore()
@@ -83,9 +85,15 @@ class EscolaStore: NSObject {
         }
     }
     
-    func fetchIdeb(_ codEscola: NSNumber?, completion: @escaping (_ ideb: Float?, _ error: Error?) -> Void) -> () {
+    func fetchIdeb(_ codEscola: NSNumber, completion: @escaping (_ ideb: Ideb?, _ error: Error?) -> Void) -> () {
         
-        let stringUrl = "\(self.baseUrl)/\(codEscola!)/avaliacoes/media"
+        if let nota = cacheIDEB.object(forKey: codEscola) {
+            print("Pegou do cache!")
+            completion(nota, nil)
+            return
+        }
+        
+        let stringUrl = "\(self.baseUrl)/\(codEscola)/avaliacoes/media"
         
         guard let url = URL(string: stringUrl) else {
             return
@@ -98,26 +106,30 @@ class EscolaStore: NSObject {
                 completion(nil, error)
                 return
             }
-            do {
-                
-                if let d = data, let nota = try JSONSerialization.jsonObject(with: d, options: .allowFragments) as? [String: AnyObject] {
-                    
-                    if let media = nota["media"] as? Float {
-                        print("\(codEscola!) = \(media)")
-                    }else {
-                        print("\(codEscola!) = \(nota["reasonPhrase"] as? String)reasonPhrase")
-                    }
-                    
-                    
-                    DispatchQueue.main.async {
-                        completion(nota["media"] as? Float, nil)
+                DispatchQueue.main.async {
+                    do {
+                        if let d = data, let notaIdeb = try JSONSerialization.jsonObject(with: d, options: .allowFragments) as? [String: Any] {
+                            let notaIde : Ideb = Ideb(dic: notaIdeb)
+                            cacheIDEB.setObject(notaIde, forKey: codEscola)
+                            
+                            print("Pegou da internet!", "inseriu na cache")
+                            completion(notaIde, nil)
+                        }
+                    }catch let error {
+                        print(error)
+                        completion(nil, error)
                     }
                 }
-            }catch let error {
-                
-                print(error)
-                completion(nil, error)
-            }
         }.resume()
+    }
+}
+
+class Ideb: AnyObject {
+    var media: Float?
+    var reasonPhrase: String?
+    
+    init(dic: Dictionary<String, Any>) {
+        self.media = dic["media"] as? Float
+        self.reasonPhrase = dic["reasonPhrase"] as? String
     }
 }

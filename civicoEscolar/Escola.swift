@@ -74,7 +74,7 @@ class Escola: NSObject {
     var telefone: String?
     var endereco: Endereco?
     var infraestrutura: Infraestutura?
-    var ideb : Float?
+    var ideb : Ideb?
     
     convenience init(dictionary: [String: Any]) {
         self.init()

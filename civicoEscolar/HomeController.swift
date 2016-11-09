@@ -51,14 +51,6 @@ class HomeController: UICollectionViewController {
         }
     }
     
-    private func fetchIdeb(codEscola: NSNumber?) {
-        
-        EscolaStore.singleton.fetchIdeb(codEscola) { (ideb, error) in
-        
-            //print(ideb)
-        }
-    }
-    
     private func setupBarButtons() {
         let filterBarButtonItem : UIBarButtonItem = {
             let b = UIBarButtonItem(image: #imageLiteral(resourceName: "filter"), style: .plain, target: self, action: #selector(self.handleFilter))
@@ -82,9 +74,7 @@ class HomeController: UICollectionViewController {
         
         let escola = self.escolas?[indexPath.item]
         cell.escola = escola
-        
-        self.fetchIdeb(codEscola: escola?.codEscola)
-        
+
         return cell
     }
     

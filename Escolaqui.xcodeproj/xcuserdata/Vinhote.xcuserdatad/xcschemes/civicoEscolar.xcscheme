@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "64DCF4341DC821D7007CC9D5"
-            BuildableName = "civicoEscolar.app"
-            BlueprintName = "civicoEscolar"
-            ReferencedContainer = "container:civicoEscolar.xcodeproj">
+            BuildableName = "Escolaqui.app"
+            BlueprintName = "Escolaqui"
+            ReferencedContainer = "container:Escolaqui.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "64DCF4341DC821D7007CC9D5"
-            BuildableName = "civicoEscolar.app"
-            BlueprintName = "civicoEscolar"
-            ReferencedContainer = "container:civicoEscolar.xcodeproj">
+            BuildableName = "Escolaqui.app"
+            BlueprintName = "Escolaqui"
+            ReferencedContainer = "container:Escolaqui.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

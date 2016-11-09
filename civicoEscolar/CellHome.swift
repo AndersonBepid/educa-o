@@ -46,12 +46,34 @@ class CellHome: UICollectionViewCell {
             } else {
                 self.educacaoEspecializadaLabel.backgroundColor = UIColor(r: 236, g: 236, b: 236)
             }
+            
+            if let cod = self.escola?.codEscola {
+                self.activity.startAnimating()
+                self.activity.isHidden = false
+                EscolaStore.singleton.fetchIdeb(cod, completion: { (ideb: Ideb?, error: Error?) in
+                    self.activity.stopAnimating()
+                    self.activity.isHidden = true
+                    if error != nil {
+                        self.notaIdebLabel.isHidden = true
+                        return
+                    }
+                    if let nota = ideb?.media {
+                        self.notaIdebLabel.text = "IDEB: \(nota)"
+                        self.notaIdebLabel.isHidden = false
+                    } else {
+                        self.notaIdebLabel.isHidden = true
+                    }
+                })
+            }
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupViews()
+        
+        self.notaIdebLabel.isHidden = true
+        self.activity.isHidden = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,6 +91,8 @@ class CellHome: UICollectionViewCell {
         self.addSubview(self.redeLabel)
         self.addSubview(self.bairroLabel)
         self.addSubview(self.telefoneLabel)
+        self.addSubview(self.notaIdebLabel)
+        self.addSubview(self.activity)
         self.addSubview(self.educacaoLabel)
         self.addSubview(self.educacaoIndigenaLabel)
         self.addSubview(self.educacaoEspecializadaLabel)
@@ -99,6 +123,15 @@ class CellHome: UICollectionViewCell {
         self.telefoneLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
         self.telefoneLabel.rightAnchor.constraint(equalTo: self.separadorVertical.leftAnchor, constant: -8).isActive = true
         self.telefoneLabel.topAnchor.constraint(equalTo: self.bairroLabel.bottomAnchor, constant: 8).isActive = true
+        
+        self.notaIdebLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        self.notaIdebLabel.rightAnchor.constraint(equalTo: self.separadorVertical.leftAnchor, constant: -8).isActive = true
+        self.notaIdebLabel.topAnchor.constraint(equalTo: self.telefoneLabel.bottomAnchor, constant: 8).isActive = true
+        
+        self.activity.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        self.activity.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        self.activity.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        self.activity.topAnchor.constraint(equalTo: self.telefoneLabel.bottomAnchor, constant: 8).isActive = true
         
         self.educacaoLabel.leftAnchor.constraint(equalTo: self.separadorVertical.rightAnchor, constant: 8).isActive = true
         self.educacaoLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8).isActive = true
@@ -218,5 +251,20 @@ class CellHome: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: sizeFont.subtitle.rawValue)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    let notaIdebLabel: UILabel = {
+        let label = UILabel()
+        label.text = "IDEB: 6"
+        label.textColor = .darkGray
+        label.font = UIFont.systemFont(ofSize: sizeFont.subtitle.rawValue)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let activity: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        return activity;
     }()
 }
