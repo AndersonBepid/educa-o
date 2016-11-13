@@ -17,16 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        self.window = UIWindow()
-        self.window?.makeKeyAndVisible()
-        
-        //self.window?.rootViewController = UINavigationController(rootViewController: EstadoController(collectionViewLayout: UICollectionViewFlowLayout()))
-        self.window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: UICollectionViewFlowLayout()))
-        
-        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().barTintColor = UIColor(r: 22, g: 38, b: 52)
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
+        application.statusBarStyle = .lightContent
         
         return true
     }
