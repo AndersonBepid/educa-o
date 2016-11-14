@@ -53,7 +53,9 @@ class HomeEscolaController: UICollectionViewController {
     }
     
     @IBAction func handleFiltrar() {
-        let navigationBusca = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationBusca")
+        let navigationBusca = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationBusca") as! UINavigationController
+        let buscaController = navigationBusca.viewControllers[0] as! BuscaViewController
+        buscaController.homeEscola = self
         self.present(navigationBusca, animated: true, completion: nil)
     }
     // MARK: UICollectionViewDataSource
@@ -78,6 +80,13 @@ class HomeEscolaController: UICollectionViewController {
         let detalhe = DetalheController()
         detalhe.escola = self.escolas?[indexPath.item]
         self.navigationController?.pushViewController(detalhe, animated: true)
+    }
+    
+    func filtrarEscolas(_ itens: [ItemFiltro]) {
+        self.escolas = EscolaStore.singleton.escolas.filter { (escola: Escola) -> Bool in
+            return escola.constainsInfra(itens: itens)
+        }
+        self.collectionView?.reloadData()
     }
 }
 

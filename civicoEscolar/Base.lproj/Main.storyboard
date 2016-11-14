@@ -401,6 +401,9 @@
                                                         <segment title="Pública"/>
                                                         <segment title="Privada"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="handleSegmented:" destination="yZf-dQ-wbv" eventType="valueChanged" id="HCr-DH-8Kt"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -739,7 +742,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUx-T2-QfG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lZv-D9-6QM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="lZv-D9-6QM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.098039215690000001" green="0.16078431369999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

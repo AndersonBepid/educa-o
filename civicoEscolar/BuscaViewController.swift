@@ -10,7 +10,12 @@ import UIKit
 
 class ItemFiltro: NSObject {
     var nomeItem: String?
+    var chave: String?
     var valor: Bool?
+    
+    override var description: String {
+        return "\(self.nomeItem) \(self.valor)"
+    }
 }
 
 class ItemFiltroStore: NSObject {
@@ -25,17 +30,23 @@ class ItemFiltroStore: NSObject {
     }
     
     private func carregarItensFiltro() {
-        var filtrosDeBusca: [[(String, Bool)]] = [[("", false)], [("Fundamental", false), ("Médio", false), ("Profissionalizante",false), ("Integrado", false)], [("Jovem/Adulto", false), ("Indigena", false), ("Especializada", false)], [("Coberta", false), ("Descoberta", false)], [("Ciências", false), ("Informática", false)], [("Creche", false), ("Berçário", false), ("Acessibilidade", false), ("Parque Infantil", false), ("Biblioteca", false), ("Área Verde",false)]]
-        let tittleSections = ["Escola", "Ensino", "Educação", "Quadra", "Laboratório", "Outros"]
+        var filtrosDeBusca: [[(String, String, Bool)]] = [
+            [("Fundamental", "temEnsinoFundamental", false), ("Médio", "temEnsinoMedio", false), ("Profissionalizante", "temEnsinoMedioProfissional", false), ("Integrado", "temEnsinoMedioIntegrado", false)],
+            [("Jovem/Adulto", "temEducacaoJovemAdulto", false), ("Indigena", "temEducacaoIndigena", false), ("Especializada","atendeEducacaoEspecializada", false)],
+            [("Coberta", "temQuadraEsporteCoberta", false), ("Descoberta", "temQuadraEsporteDescoberta", false)],
+            [("Ciências", "temLaboratorioCiencias", false), ("Informática","temLaboratorioInformatica", false)],
+            [("Creche", "temCreche", false), ("Berçário", "temBercario", false), ("Acessibilidade", "temAcessibilidade", false), ("Parque Infantil", "temParqueInfantil", false),("Biblioteca", "temBiblioteca", false), ("Área Verde", "temAreaVerde", false)], [("", "rede", false)]]
+        let tittleSections = ["Ensino", "Educação", "Quadra", "Laboratório", "Outros", "Escola"]
         
         
         for (index, section) in tittleSections.enumerated() {
             let tupla = filtrosDeBusca[index]
             var itensFiltro : [ItemFiltro] = []
-            tupla.forEach({ (chave: String,valor: Bool) in
+            tupla.forEach({ (item: (String, String, Bool)) in
                 let i = ItemFiltro()
-                i.nomeItem = chave
-                i.valor = valor
+                i.nomeItem = item.0
+                i.chave = item.1
+                i.valor = item.2
                 itensFiltro.append(i)
             })
             self.itens.updateValue(itensFiltro, forKey: section)
@@ -45,11 +56,9 @@ class ItemFiltroStore: NSObject {
 
 class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var filtrosDeBusca: [[(String, Bool)]] = [[("", false)], [("Fundamental", false), ("Médio", false), ("Profissionalizante",false), ("Integrado", false)], [("Jovem/Adulto", false), ("Indigena", false), ("Especializada", false)], [("Coberta", false), ("Descoberta", false)], [("Ciências", false), ("Informática", false)], [("Creche", false), ("Berçário", false), ("Acessibilidade", false), ("Parque Infantil", false), ("Biblioteca", false), ("Área Verde",false)]]
-    let tittleSections = ["Escola", "Ensino", "Educação", "Quadra", "Laboratório", "Outros"]
-    
     var rede: String?
     var infra: SectionInfra?
+    weak var homeEscola: HomeEscolaController?
     
     @IBOutlet weak var localizarBt: UIButton!
     
@@ -68,7 +77,18 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
 
     @IBAction func handleLocalizar() {
-        print(self.filtrosDeBusca)
+        
+        var itensFiltro: [ItemFiltro] = []
+        ItemFiltroStore.singleton.itens.forEach { (dic: (key: String, value: [ItemFiltro])) in
+            dic.value.forEach({ (item: ItemFiltro) in
+                if let v = item.valor, v == true {
+                    itensFiltro.append(item)
+                }
+            })
+        }
+        print(itensFiltro)
+        self.dismiss(animated: true, completion: nil)
+        self.homeEscola?.filtrarEscolas(itensFiltro)
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,34 +99,28 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: - Table View Data Source
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return self.tittleSections.count
+        return Array(ItemFiltroStore.singleton.itens.keys).count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.filtrosDeBusca[section].count
+//        return self.filtrosDeBusca[section].count
+        let keys = Array(ItemFiltroStore.singleton.itens.keys)
+        let itens = ItemFiltroStore.singleton.itens[keys[section]]
+        return itens?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let keys = Array(ItemFiltroStore.singleton.itens.keys)
         
-        if indexPath.section == 0 {
+        if keys[indexPath.section] == "Escola" {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1") as! BuscaSegmentedTableViewCell
-            
-            if self.rede == "Privada" {
-                cell.escolaSegmented.selectedSegmentIndex = 1
-            }else {
-                cell.escolaSegmented.selectedSegmentIndex = 0
-            }
-            
-            
+            cell.item = ItemFiltroStore.singleton.itens[keys[indexPath.section]]?[indexPath.item]
             return cell
         }else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2") as! BuscaSwitchTableViewCell
-            cell.valor = self.filtrosDeBusca[indexPath.section][indexPath.row]
-           
+            cell.item = ItemFiltroStore.singleton.itens[keys[indexPath.section]]?[indexPath.item]
             
             return cell
         }
@@ -134,7 +148,7 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
         let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
         
-        labelTitle.text = self.tittleSections[section]
+        labelTitle.text = Array(ItemFiltroStore.singleton.itens.keys)[section]
         labelTitle.textAlignment = .center
         labelTitle.textColor = UIColor(r: 214, g: 195, b: 114)
         labelTitle.font = UIFont.systemFont(ofSize: 15)
@@ -144,15 +158,4 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         return view
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
