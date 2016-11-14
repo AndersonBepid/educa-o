@@ -110,7 +110,7 @@ class EnderecoViewController: UIViewController {
     
     func up(_ notification: Notification) {
         
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -70
     }
     
     func down(_ notification: Notification) {
