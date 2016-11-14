@@ -7,28 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6417DBC41DDA1F1D009B25AA /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CB5E1DD4258A00198BF8 /* Extension+UIColor.swift */; };
-		6417DBC51DDA1F23009B25AA /* EstadosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE821DD660D0001B1E77 /* EstadosCollectionViewCell.swift */; };
-		6417DBC61DDA1F23009B25AA /* BuscaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7891DD986AB00C7DB4C /* BuscaTableViewCell.swift */; };
-		6417DBC71DDA1F29009B25AA /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE881DD82EBB001B1E77 /* Estado.swift */; };
-		6417DBC81DDA1F29009B25AA /* EstadoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE8A1DD82ECA001B1E77 /* EstadoStore.swift */; };
-		6417DBC91DDA1F29009B25AA /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957D1DCAE0000057B715 /* Escola.swift */; };
-		6417DBCA1DDA1F29009B25AA /* EscolaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */; };
-		6417DBCB1DDA1F29009B25AA /* EnderecoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7851DD965F300C7DB4C /* EnderecoStore.swift */; };
-		6417DBCC1DDA1F29009B25AA /* InfraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A78B1DD99A3600C7DB4C /* InfraStore.swift */; };
-		6417DBCD1DDA1F2E009B25AA /* CellEscola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */; };
-		6417DBCE1DDA1F3F009B25AA /* CellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89111DCB747D00D5C43B /* CellHome.swift */; };
-		6417E2731DDA1F6700D164DD /* BuscaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */; };
-		6417E2741DDA1F6700D164DD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647784521DCAAB0700F2922D /* HomeController.swift */; };
-		6417E2751DDA1F6700D164DD /* DetalheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89131DCB836F00D5C43B /* DetalheController.swift */; };
-		6417E2761DDA1F6700D164DD /* HomeEscolaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1F5811DD8FCE400B0D2B5 /* HomeEscolaController.swift */; };
-		6417E2771DDA1F6700D164DD /* EstadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */; };
-		6417E2781DDA1F6700D164DD /* EnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */; };
-		6417E2791DDA1F6700D164DD /* BuscaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */; };
-		6417E27A1DDA1F6700D164DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */; };
-		6417E27B1DDA219800D164DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF43C1DC821D7007CC9D5 /* Main.storyboard */; };
+		645E89121DCB747D00D5C43B /* CellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89111DCB747D00D5C43B /* CellHome.swift */; };
+		645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89131DCB836F00D5C43B /* DetalheController.swift */; };
+		647784531DCAAB0700F2922D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647784521DCAAB0700F2922D /* HomeController.swift */; };
+		6493CB5F1DD4258A00198BF8 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CB5E1DD4258A00198BF8 /* Extension+UIColor.swift */; };
+		64A1F5821DD8FCE400B0D2B5 /* HomeEscolaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1F5811DD8FCE400B0D2B5 /* HomeEscolaController.swift */; };
+		64A1F5841DD906BF00B0D2B5 /* CellEscola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */; };
+		64D0957E1DCAE0000057B715 /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957D1DCAE0000057B715 /* Escola.swift */; };
+		64D095801DCAE3FF0057B715 /* EscolaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */; };
+		64DCF4391DC821D7007CC9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */; };
+		64DCF43E1DC821D7007CC9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF43C1DC821D7007CC9D5 /* Main.storyboard */; };
+		64DCF4411DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF43F1DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld */; };
 		64DCF4431DC821D7007CC9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4421DC821D7007CC9D5 /* Assets.xcassets */; };
 		64DCF4461DC821D7007CC9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4441DC821D7007CC9D5 /* LaunchScreen.storyboard */; };
+		64DCF4501DC829A4007CC9D5 /* BuscaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */; };
+		A0F4A7841DD9268900C7DB4C /* EnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */; };
+		A0F4A7861DD965F300C7DB4C /* EnderecoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7851DD965F300C7DB4C /* EnderecoStore.swift */; };
+		A0F4A7881DD985E300C7DB4C /* BuscaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */; };
+		A0F4A78A1DD986AB00C7DB4C /* BuscaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7891DD986AB00C7DB4C /* BuscaTableViewCell.swift */; };
+		A0F4A78C1DD99A3600C7DB4C /* InfraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A78B1DD99A3600C7DB4C /* InfraStore.swift */; };
+		A0F7CE831DD660D0001B1E77 /* EstadosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE821DD660D0001B1E77 /* EstadosCollectionViewCell.swift */; };
+		A0F7CE871DD66488001B1E77 /* EstadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */; };
+		A0F7CE891DD82EBB001B1E77 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE881DD82EBB001B1E77 /* Estado.swift */; };
+		A0F7CE8B1DD82ECA001B1E77 /* EstadoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE8A1DD82ECA001B1E77 /* EstadoStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,10 +75,14 @@
 			isa = PBXGroup;
 			children = (
 				645E89111DCB747D00D5C43B /* CellHome.swift */,
+<<<<<<< HEAD
 				64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */,
+				64DCF43C1DC821D7007CC9D5 /* Main.storyboard */,
+=======
 				64DCF43C1DC821D7007CC9D5 /* Main.storyboard */,
 				A0F7CE821DD660D0001B1E77 /* EstadosCollectionViewCell.swift */,
 				A0F4A7891DD986AB00C7DB4C /* BuscaTableViewCell.swift */,
+>>>>>>> tempdeveloper
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -88,10 +93,13 @@
 				64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */,
 				647784521DCAAB0700F2922D /* HomeController.swift */,
 				645E89131DCB836F00D5C43B /* DetalheController.swift */,
+<<<<<<< HEAD
 				64A1F5811DD8FCE400B0D2B5 /* HomeEscolaController.swift */,
+=======
 				A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */,
 				A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */,
 				A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */,
+>>>>>>> tempdeveloper
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -209,9 +217,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6417E27B1DDA219800D164DD /* Main.storyboard in Resources */,
 				64DCF4461DC821D7007CC9D5 /* LaunchScreen.storyboard in Resources */,
 				64DCF4431DC821D7007CC9D5 /* Assets.xcassets in Resources */,
+				64DCF43E1DC821D7007CC9D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,25 +230,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6417E2731DDA1F6700D164DD /* BuscaController.swift in Sources */,
-				6417E2741DDA1F6700D164DD /* HomeController.swift in Sources */,
-				6417E2751DDA1F6700D164DD /* DetalheController.swift in Sources */,
-				6417E2761DDA1F6700D164DD /* HomeEscolaController.swift in Sources */,
-				6417E2771DDA1F6700D164DD /* EstadosViewController.swift in Sources */,
-				6417E2781DDA1F6700D164DD /* EnderecoViewController.swift in Sources */,
-				6417E2791DDA1F6700D164DD /* BuscaViewController.swift in Sources */,
-				6417E27A1DDA1F6700D164DD /* AppDelegate.swift in Sources */,
-				6417DBCE1DDA1F3F009B25AA /* CellHome.swift in Sources */,
-				6417DBCD1DDA1F2E009B25AA /* CellEscola.swift in Sources */,
-				6417DBC71DDA1F29009B25AA /* Estado.swift in Sources */,
-				6417DBC81DDA1F29009B25AA /* EstadoStore.swift in Sources */,
-				6417DBC91DDA1F29009B25AA /* Escola.swift in Sources */,
-				6417DBCA1DDA1F29009B25AA /* EscolaStore.swift in Sources */,
-				6417DBCB1DDA1F29009B25AA /* EnderecoStore.swift in Sources */,
-				6417DBCC1DDA1F29009B25AA /* InfraStore.swift in Sources */,
-				6417DBC51DDA1F23009B25AA /* EstadosCollectionViewCell.swift in Sources */,
-				6417DBC61DDA1F23009B25AA /* BuscaTableViewCell.swift in Sources */,
-				6417DBC41DDA1F1D009B25AA /* Extension+UIColor.swift in Sources */,
+				A0F7CE871DD66488001B1E77 /* EstadosViewController.swift in Sources */,
+				647784531DCAAB0700F2922D /* HomeController.swift in Sources */,
+<<<<<<< HEAD
+				64A1F5821DD8FCE400B0D2B5 /* HomeEscolaController.swift in Sources */,
+				64D0957E1DCAE0000057B715 /* Escola.swift in Sources */,
+				6493CB5F1DD4258A00198BF8 /* Extension+UIColor.swift in Sources */,
+				645E89121DCB747D00D5C43B /* CellHome.swift in Sources */,
+				64DCF4411DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld in Sources */,
+				64A1F5841DD906BF00B0D2B5 /* CellEscola.swift in Sources */,
+=======
+				A0F4A7881DD985E300C7DB4C /* BuscaViewController.swift in Sources */,
+				64D0957E1DCAE0000057B715 /* Escola.swift in Sources */,
+				A0F4A78A1DD986AB00C7DB4C /* BuscaTableViewCell.swift in Sources */,
+				645E89121DCB747D00D5C43B /* CellHome.swift in Sources */,
+				64DCF4411DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld in Sources */,
+				A0F4A78C1DD99A3600C7DB4C /* InfraStore.swift in Sources */,
+				A0F4A7841DD9268900C7DB4C /* EnderecoViewController.swift in Sources */,
+>>>>>>> tempdeveloper
+				64DCF4391DC821D7007CC9D5 /* AppDelegate.swift in Sources */,
+				645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */,
+				64D095801DCAE3FF0057B715 /* EscolaStore.swift in Sources */,
+				A0F7CE891DD82EBB001B1E77 /* Estado.swift in Sources */,
+				A0F7CE8B1DD82ECA001B1E77 /* EstadoStore.swift in Sources */,
+				64DCF4501DC829A4007CC9D5 /* BuscaController.swift in Sources */,
+				A0F4A7861DD965F300C7DB4C /* EnderecoStore.swift in Sources */,
+				A0F7CE831DD660D0001B1E77 /* EstadosCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

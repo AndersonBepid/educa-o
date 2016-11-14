@@ -25,14 +25,6 @@ class EscolaStore: NSObject {
         //-3.117034, -60.025780 - original
 //        let lat = -3.029961
 //        let long = -59.979305
-
-        let descricao = "sete de setembro"
-        let bairro = "centro"
-        let cidade = "manaus"
-        
-        endereco.descricao = descricao
-        endereco.bairro = bairro
-        endereco.municipio = cidade
         
         self.fetchGeocoder(endereco) {  (_ location: CLLocation?, _ error: Error?)  in
             

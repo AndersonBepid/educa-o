@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         application.statusBarStyle = .lightContent
         
+<<<<<<< HEAD
+=======
+        UINavigationBar.appearance().barTintColor = UIColor(r: 22, g: 38, b: 52)
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+>>>>>>> tempdeveloper
+        
         application.statusBarStyle = .lightContent
         
         return true
