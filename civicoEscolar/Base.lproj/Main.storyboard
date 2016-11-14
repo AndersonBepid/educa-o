@@ -150,8 +150,8 @@
                                 <connections>
                                     <outlet property="bairroEscola" destination="cq7-8o-SMr" id="GHA-6E-oEb"/>
                                     <outlet property="containerNomeHeigthConstraint" destination="AYX-UJ-ZrQ" id="0WX-5L-3YD"/>
+                                    <outlet property="emailBottomConstraint" destination="xaj-Q6-Ntz" id="hmp-xg-IKV"/>
                                     <outlet property="emailEscola" destination="WrK-of-ysI" id="Ws4-Lb-OiK"/>
-                                    <outlet property="emailHeightConstraint" destination="xaj-Q6-Ntz" id="1qa-8n-HNd"/>
                                     <outlet property="idebEscola" destination="eQR-YQ-KoK" id="rXE-i6-cWr"/>
                                     <outlet property="imageIdeb" destination="rn6-2b-foM" id="Bt8-nQ-wIC"/>
                                     <outlet property="nomeEscola" destination="YAW-e1-Ybq" id="yXD-3t-Yju"/>
