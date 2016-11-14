@@ -34,12 +34,12 @@ class HomeEscolaController: UICollectionViewController {
         self.lock()
         EscolaStore.singleton.fetchEscola(e) { (escolas: [Escola]?, error: Error?) in
             self.unlock()
+            self.escolas = escolas
             if error != nil{
                 print(error!)
                 return
             }
-            
-            self.escolas = escolas
+
             self.collectionView?.reloadData()
         }
     }

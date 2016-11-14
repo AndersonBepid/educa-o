@@ -8,9 +8,44 @@
 
 import UIKit
 
+class ItemFiltro: NSObject {
+    var nomeItem: String?
+    var valor: Bool?
+}
+
+class ItemFiltroStore: NSObject {
+    
+    static let singleton: ItemFiltroStore = ItemFiltroStore()
+    
+    var itens : Dictionary<String, [ItemFiltro]> = Dictionary<String, [ItemFiltro]>()
+
+    private override init() {
+        super.init()
+        self.carregarItensFiltro()
+    }
+    
+    private func carregarItensFiltro() {
+        var filtrosDeBusca: [[(String, Bool)]] = [[("", false)], [("Fundamental", false), ("Médio", false), ("Profissionalizante",false), ("Integrado", false)], [("Jovem/Adulto", false), ("Indigena", false), ("Especializada", false)], [("Coberta", false), ("Descoberta", false)], [("Ciências", false), ("Informática", false)], [("Creche", false), ("Berçário", false), ("Acessibilidade", false), ("Parque Infantil", false), ("Biblioteca", false), ("Área Verde",false)]]
+        let tittleSections = ["Escola", "Ensino", "Educação", "Quadra", "Laboratório", "Outros"]
+        
+        
+        for (index, section) in tittleSections.enumerated() {
+            let tupla = filtrosDeBusca[index]
+            var itensFiltro : [ItemFiltro] = []
+            tupla.forEach({ (chave: String,valor: Bool) in
+                let i = ItemFiltro()
+                i.nomeItem = chave
+                i.valor = valor
+                itensFiltro.append(i)
+            })
+            self.itens.updateValue(itensFiltro, forKey: section)
+        }
+    }
+}
+
 class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    let filtrosDeBusca = [[""], ["Fundamental", "Médio", "Profissionalizante", "Integrado"], ["Jovem/Adulto", "Indigena", "Especializada"], ["Coberta", "Descoberta"], ["Ciências", "Informática"], ["Creche", "Berçário", "Acessibilidade", "Parque Infantil", "Biblioteca", "Área Verde"]]
+    var filtrosDeBusca: [[(String, Bool)]] = [[("", false)], [("Fundamental", false), ("Médio", false), ("Profissionalizante",false), ("Integrado", false)], [("Jovem/Adulto", false), ("Indigena", false), ("Especializada", false)], [("Coberta", false), ("Descoberta", false)], [("Ciências", false), ("Informática", false)], [("Creche", false), ("Berçário", false), ("Acessibilidade", false), ("Parque Infantil", false), ("Biblioteca", false), ("Área Verde",false)]]
     let tittleSections = ["Escola", "Ensino", "Educação", "Quadra", "Laboratório", "Outros"]
     
     var rede: String?
@@ -23,13 +58,7 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.localizarBt.layer.shadowRadius = 1
         self.localizarBt.layer.shadowOpacity = 1
-        
-//        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
-//        labelTitle.text = "Busca"
-//        labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
-//        labelTitle.font = UIFont.systemFont(ofSize: 20)
-//        self.navigationItem.titleView = labelTitle
-        
+
         self.rede = InfraStore.singleton.getInfra().0
         self.infra = SectionInfra(InfraStore.singleton.getInfra().1)
         
@@ -38,6 +67,10 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func handleLocalizar() {
+        print(self.filtrosDeBusca)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,14 +105,8 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         }else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2") as! BuscaSwitchTableViewCell
-            
-            cell.indicadorLabel.text = self.filtrosDeBusca[indexPath.section][indexPath.row]
-            if self.infra?.filtro?[indexPath.section][indexPath.row] == "S" {
-                
-                cell.valorSwitch.isOn = true
-            }else {
-                cell.valorSwitch.isOn = false
-            }
+            cell.valor = self.filtrosDeBusca[indexPath.section][indexPath.row]
+           
             
             return cell
         }

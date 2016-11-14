@@ -21,6 +21,7 @@ class EscolaStore: NSObject {
     }
     
     func fetchEscola(_ endereco: Endereco, completion: @escaping (_ escolas: [Escola]?, _ error: Error?) -> Void) -> (){
+        print(endereco)
         self.fetchGeocoder(endereco) {  (_ location: CLLocation?, _ error: Error?)  in
             
             guard let location = location else {
