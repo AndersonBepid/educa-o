@@ -10,6 +10,9 @@
 		645E89121DCB747D00D5C43B /* CellHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89111DCB747D00D5C43B /* CellHome.swift */; };
 		645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645E89131DCB836F00D5C43B /* DetalheController.swift */; };
 		647784531DCAAB0700F2922D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647784521DCAAB0700F2922D /* HomeController.swift */; };
+		6493CB5F1DD4258A00198BF8 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6493CB5E1DD4258A00198BF8 /* Extension+UIColor.swift */; };
+		64A1F5821DD8FCE400B0D2B5 /* HomeEscolaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1F5811DD8FCE400B0D2B5 /* HomeEscolaController.swift */; };
+		64A1F5841DD906BF00B0D2B5 /* CellEscola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */; };
 		64D0957E1DCAE0000057B715 /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957D1DCAE0000057B715 /* Escola.swift */; };
 		64D095801DCAE3FF0057B715 /* EscolaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */; };
 		64DCF4391DC821D7007CC9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */; };
@@ -24,6 +27,9 @@
 		645E89111DCB747D00D5C43B /* CellHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHome.swift; sourceTree = "<group>"; };
 		645E89131DCB836F00D5C43B /* DetalheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheController.swift; sourceTree = "<group>"; };
 		647784521DCAAB0700F2922D /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		6493CB5E1DD4258A00198BF8 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		64A1F5811DD8FCE400B0D2B5 /* HomeEscolaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEscolaController.swift; sourceTree = "<group>"; };
+		64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellEscola.swift; sourceTree = "<group>"; };
 		64D0957D1DCAE0000057B715 /* Escola.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Escola.swift; sourceTree = "<group>"; };
 		64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolaStore.swift; sourceTree = "<group>"; };
 		64DCF4351DC821D7007CC9D5 /* Escolaqui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Escolaqui.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				645E89111DCB747D00D5C43B /* CellHome.swift */,
+				64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -61,8 +68,17 @@
 				64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */,
 				647784521DCAAB0700F2922D /* HomeController.swift */,
 				645E89131DCB836F00D5C43B /* DetalheController.swift */,
+				64A1F5811DD8FCE400B0D2B5 /* HomeEscolaController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		6493CB5D1DD4257900198BF8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6493CB5E1DD4258A00198BF8 /* Extension+UIColor.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		64D0957C1DCADFF50057B715 /* Model */ = {
@@ -93,6 +109,7 @@
 		64DCF4371DC821D7007CC9D5 /* civicoEscolar */ = {
 			isa = PBXGroup;
 			children = (
+				6493CB5D1DD4257900198BF8 /* Util */,
 				645E89101DCB746700D5C43B /* View */,
 				64D0957C1DCADFF50057B715 /* Model */,
 				647784541DCAAC8000F2922D /* Controller */,
@@ -180,9 +197,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				647784531DCAAB0700F2922D /* HomeController.swift in Sources */,
+				64A1F5821DD8FCE400B0D2B5 /* HomeEscolaController.swift in Sources */,
 				64D0957E1DCAE0000057B715 /* Escola.swift in Sources */,
+				6493CB5F1DD4258A00198BF8 /* Extension+UIColor.swift in Sources */,
 				645E89121DCB747D00D5C43B /* CellHome.swift in Sources */,
 				64DCF4411DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld in Sources */,
+				64A1F5841DD906BF00B0D2B5 /* CellEscola.swift in Sources */,
 				64DCF4391DC821D7007CC9D5 /* AppDelegate.swift in Sources */,
 				645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */,
 				64D095801DCAE3FF0057B715 /* EscolaStore.swift in Sources */,

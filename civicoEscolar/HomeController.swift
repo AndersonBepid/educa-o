@@ -23,11 +23,7 @@ class HomeController: UICollectionViewController {
         self.collectionView?.register(CellHome.self, forCellWithReuseIdentifier: self.cellId)
         self.collectionView?.alwaysBounceVertical = true
         
-        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 32, height: self.view.frame.height))
-        labelTitle.text = "  Escolas"
-        labelTitle.textColor = .black
-        labelTitle.font = UIFont.systemFont(ofSize: 20)
-        self.navigationItem.titleView = labelTitle
+        self.navigationItem.title = "Escolas"
         
         self.setupBarButtons()
         self.fetchEscolas()
@@ -54,7 +50,6 @@ class HomeController: UICollectionViewController {
     private func setupBarButtons() {
         let filterBarButtonItem : UIBarButtonItem = {
             let b = UIBarButtonItem(image: #imageLiteral(resourceName: "filter"), style: .plain, target: self, action: #selector(self.handleFilter))
-            b.tintColor = .black
             return b
         }()
         self.navigationItem.rightBarButtonItem = filterBarButtonItem

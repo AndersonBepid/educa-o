@@ -71,6 +71,7 @@ class Escola: NSObject {
     var codEscola: NSNumber?
     var nome: String?
     var rede: String?
+    var email: String?
     var telefone: String?
     var endereco: Endereco?
     var infraestrutura: Infraestutura?
