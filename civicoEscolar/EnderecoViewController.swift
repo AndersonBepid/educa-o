@@ -26,9 +26,14 @@ class EnderecoViewController: UIViewController {
     @IBOutlet weak var bairroTF: UITextField!
     @IBOutlet weak var cidadeTF: UITextField!
     
+    @IBOutlet weak var continuarBt: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.continuarBt.layer.shadowRadius = 1
+        self.continuarBt.layer.shadowOpacity = 1
+        
         self.bandeiraImage.image = self.bandeira
         self.estadoLabel.text = self.estado
         
@@ -38,10 +43,16 @@ class EnderecoViewController: UIViewController {
         labelTitle.font = UIFont.systemFont(ofSize: 20)
         self.navigationItem.titleView = labelTitle
         
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(EnderecoViewController.dismissKeyboard))
+        swipe.direction = .down
+        swipe.numberOfTouchesRequired = 1
+        self.view.addGestureRecognizer(swipe)
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(EnderecoViewController.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
         
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(EnderecoViewController.up(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EnderecoViewController.down(_:)), name: .UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +105,17 @@ class EnderecoViewController: UIViewController {
     
     func dismissKeyboard() {
         
-        self.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    
+    func up(_ notification: Notification) {
+        
+        self.view.frame.origin.y = -150
+    }
+    
+    func down(_ notification: Notification) {
+        
+        self.view.frame.origin.y = 64
     }
     
     /*

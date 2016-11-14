@@ -17,6 +17,4 @@ class BuscaSwitchTableViewCell: UITableViewCell {
 class BuscaSegmentedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var escolaSegmented: UISegmentedControl!
-    
-    
 }

@@ -14,10 +14,22 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
     var estados: [Estado] = []
     var item: Int?
     
+    @IBOutlet weak var lousa: UIImageView!
+    @IBOutlet weak var mulher: UIImageView!
+    @IBOutlet weak var braco: UIImageView!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.mulher.layer.shadowRadius = 1
+        self.mulher.layer.shadowOpacity = 1
+        
+        self.lousa.layer.shadowRadius = 1
+        self.lousa.layer.shadowOpacity = 1
+        
+        self.braco.layer.shadowRadius = 1
+        self.braco.layer.shadowOpacity = 1
         
         self.estados = EstadoStore.singleton.getAllEstados()
         

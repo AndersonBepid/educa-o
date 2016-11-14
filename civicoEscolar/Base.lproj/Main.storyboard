@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1qz-rn-Mpx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fj0-fC-Mrv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -144,6 +144,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Estados" id="65k-gJ-GmC"/>
                     <connections>
+                        <outlet property="braco" destination="zHK-JS-jOg" id="MJE-Zi-wIa"/>
+                        <outlet property="lousa" destination="DKh-cV-dgX" id="9LE-HN-Y1H"/>
+                        <outlet property="mulher" destination="U4Y-4q-1Mc" id="C3z-1r-fIE"/>
                         <segue destination="kaz-bb-vG9" kind="show" identifier="descricao" id="DON-Hw-8jo"/>
                     </connections>
                 </viewController>
@@ -331,6 +334,7 @@
                         <outlet property="cidadeLabel" destination="jmB-PN-YHC" id="Tlv-qu-cAX"/>
                         <outlet property="cidadeTF" destination="JR0-7h-Maj" id="VII-iJ-Bch"/>
                         <outlet property="complementoTF" destination="yJ3-mg-0Yi" id="PdB-pN-g8u"/>
+                        <outlet property="continuarBt" destination="RNW-Nb-yw6" id="eAC-kl-KXO"/>
                         <outlet property="estadoLabel" destination="Uq6-1i-apG" id="Hr5-JO-LFx"/>
                         <outlet property="numeroTF" destination="5X3-7f-Wum" id="148-3J-3QA"/>
                         <outlet property="ruaLabel" destination="Und-RT-NNi" id="dte-Ve-ZOf"/>
@@ -459,6 +463,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ybW-8Q-BFb"/>
+                    <connections>
+                        <outlet property="localizarBt" destination="5YH-wV-u4c" id="2iO-o7-Ph1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

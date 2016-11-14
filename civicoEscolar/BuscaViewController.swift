@@ -16,10 +16,14 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     var rede: String?
     var infra: SectionInfra?
     
+    @IBOutlet weak var localizarBt: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.localizarBt.layer.shadowRadius = 1
+        self.localizarBt.layer.shadowOpacity = 1
+        
         let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
         labelTitle.text = "Busca"
         labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
@@ -28,6 +32,7 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.rede = InfraStore.singleton.getInfra().0
         self.infra = SectionInfra(InfraStore.singleton.getInfra().1)
+        
     }
 
     override func didReceiveMemoryWarning() {
