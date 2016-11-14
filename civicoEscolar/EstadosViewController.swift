@@ -21,6 +21,7 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
         
         self.estados = EstadoStore.singleton.getAllEstados()
         
+        
         let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
         labelTitle.text = "Estados"
         labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
@@ -28,6 +29,12 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
         self.navigationItem.titleView = labelTitle
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
     }
 
     override func didReceiveMemoryWarning() {

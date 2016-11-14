@@ -19,6 +19,10 @@
 		64DCF4461DC821D7007CC9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4441DC821D7007CC9D5 /* LaunchScreen.storyboard */; };
 		64DCF4501DC829A4007CC9D5 /* BuscaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */; };
 		A0F4A7841DD9268900C7DB4C /* EnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */; };
+		A0F4A7861DD965F300C7DB4C /* EnderecoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7851DD965F300C7DB4C /* EnderecoStore.swift */; };
+		A0F4A7881DD985E300C7DB4C /* BuscaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */; };
+		A0F4A78A1DD986AB00C7DB4C /* BuscaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7891DD986AB00C7DB4C /* BuscaTableViewCell.swift */; };
+		A0F4A78C1DD99A3600C7DB4C /* InfraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A78B1DD99A3600C7DB4C /* InfraStore.swift */; };
 		A0F7CE831DD660D0001B1E77 /* EstadosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE821DD660D0001B1E77 /* EstadosCollectionViewCell.swift */; };
 		A0F7CE871DD66488001B1E77 /* EstadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */; };
 		A0F7CE891DD82EBB001B1E77 /* Estado.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7CE881DD82EBB001B1E77 /* Estado.swift */; };
@@ -40,6 +44,10 @@
 		64DCF4471DC821D7007CC9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64DCF44F1DC829A4007CC9D5 /* BuscaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscaController.swift; sourceTree = "<group>"; };
 		A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecoViewController.swift; sourceTree = "<group>"; };
+		A0F4A7851DD965F300C7DB4C /* EnderecoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecoStore.swift; sourceTree = "<group>"; };
+		A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscaViewController.swift; sourceTree = "<group>"; };
+		A0F4A7891DD986AB00C7DB4C /* BuscaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscaTableViewCell.swift; sourceTree = "<group>"; };
+		A0F4A78B1DD99A3600C7DB4C /* InfraStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfraStore.swift; sourceTree = "<group>"; };
 		A0F7CE821DD660D0001B1E77 /* EstadosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstadosViewController.swift; sourceTree = "<group>"; };
 		A0F7CE881DD82EBB001B1E77 /* Estado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estado.swift; sourceTree = "<group>"; };
@@ -63,6 +71,7 @@
 				645E89111DCB747D00D5C43B /* CellHome.swift */,
 				64DCF43C1DC821D7007CC9D5 /* Main.storyboard */,
 				A0F7CE821DD660D0001B1E77 /* EstadosCollectionViewCell.swift */,
+				A0F4A7891DD986AB00C7DB4C /* BuscaTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -75,6 +84,7 @@
 				645E89131DCB836F00D5C43B /* DetalheController.swift */,
 				A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */,
 				A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */,
+				A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -86,6 +96,8 @@
 				A0F7CE8A1DD82ECA001B1E77 /* EstadoStore.swift */,
 				64D0957D1DCAE0000057B715 /* Escola.swift */,
 				64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */,
+				A0F4A7851DD965F300C7DB4C /* EnderecoStore.swift */,
+				A0F4A78B1DD99A3600C7DB4C /* InfraStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,9 +208,12 @@
 			files = (
 				A0F7CE871DD66488001B1E77 /* EstadosViewController.swift in Sources */,
 				647784531DCAAB0700F2922D /* HomeController.swift in Sources */,
+				A0F4A7881DD985E300C7DB4C /* BuscaViewController.swift in Sources */,
 				64D0957E1DCAE0000057B715 /* Escola.swift in Sources */,
+				A0F4A78A1DD986AB00C7DB4C /* BuscaTableViewCell.swift in Sources */,
 				645E89121DCB747D00D5C43B /* CellHome.swift in Sources */,
 				64DCF4411DC821D7007CC9D5 /* civicoEscolar.xcdatamodeld in Sources */,
+				A0F4A78C1DD99A3600C7DB4C /* InfraStore.swift in Sources */,
 				A0F4A7841DD9268900C7DB4C /* EnderecoViewController.swift in Sources */,
 				64DCF4391DC821D7007CC9D5 /* AppDelegate.swift in Sources */,
 				645E89141DCB836F00D5C43B /* DetalheController.swift in Sources */,
@@ -206,6 +221,7 @@
 				A0F7CE891DD82EBB001B1E77 /* Estado.swift in Sources */,
 				A0F7CE8B1DD82ECA001B1E77 /* EstadoStore.swift in Sources */,
 				64DCF4501DC829A4007CC9D5 /* BuscaController.swift in Sources */,
+				A0F4A7861DD965F300C7DB4C /* EnderecoStore.swift in Sources */,
 				A0F7CE831DD660D0001B1E77 /* EstadosCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
