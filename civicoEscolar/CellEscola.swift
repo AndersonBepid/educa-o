@@ -11,7 +11,7 @@ import UIKit
 extension String {
     
     func rect(view: UIView) -> CGRect {
-        let rect = NSString(string: self).boundingRect(with: CGSize(width: view.frame.width - 20, height: 1000), options: NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)], context: nil)
+        let rect = NSString(string: self).boundingRect(with: CGSize(width: view.frame.width - 40, height: 1000), options: NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)], context: nil)
         return rect
     }
     

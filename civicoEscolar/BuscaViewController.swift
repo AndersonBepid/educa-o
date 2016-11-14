@@ -24,15 +24,18 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.localizarBt.layer.shadowRadius = 1
         self.localizarBt.layer.shadowOpacity = 1
         
-        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
-        labelTitle.text = "Busca"
-        labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
-        labelTitle.font = UIFont.systemFont(ofSize: 20)
-        self.navigationItem.titleView = labelTitle
+//        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
+//        labelTitle.text = "Busca"
+//        labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
+//        labelTitle.font = UIFont.systemFont(ofSize: 20)
+//        self.navigationItem.titleView = labelTitle
         
         self.rede = InfraStore.singleton.getInfra().0
         self.infra = SectionInfra(InfraStore.singleton.getInfra().1)
         
+    }
+    @IBAction func handleFechar() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +89,7 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 44
+        return 30
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -101,13 +104,13 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
-        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
+        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
         
         labelTitle.text = self.tittleSections[section]
         labelTitle.textAlignment = .center
         labelTitle.textColor = UIColor(r: 214, g: 195, b: 114)
-        labelTitle.font = UIFont.systemFont(ofSize: 20)
+        labelTitle.font = UIFont.systemFont(ofSize: 15)
         
         view.addSubview(labelTitle)
         view.backgroundColor = UIColor(r: 22, g: 38, b: 52)

@@ -101,7 +101,7 @@ class Endereco: NSObject {
     
     override var description: String {
         get {
-            return "\(self.descricao!) \(self.bairro!) \(self.municipio!) \(self.uf!)"
+            return "\(self.descricao) \(self.bairro) \(self.municipio) \(self.uf)"
         }
     }
 }

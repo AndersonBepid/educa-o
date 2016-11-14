@@ -25,24 +25,30 @@ class EnderecoStore: NSObject {
         }
     }*/
     
-    func saveEndereco(_ endereco: Endereco) {
-        
+    func saveEndereco(_ endereco: Endereco?) {
+        guard let e = endereco else {
+            return
+        }
         print("pre-fudeu")
-        self.user.set(endereco.descricao, forKey: "descricao")
-        self.user.set(endereco.bairro, forKey: "bairro")
-        self.user.set(endereco.municipio, forKey: "municipio")
-        self.user.set(endereco.uf, forKey: "uf")
+        self.user.set(e.descricao, forKey: "descricao")
+        self.user.set(e.bairro, forKey: "bairro")
+        self.user.set(e.municipio, forKey: "municipio")
+        self.user.set(e.uf, forKey: "uf")
         print("passou")
     }
     
     func getEndereco() -> Endereco? {
         
+        guard let descricao = user.string(forKey: "descricao"), let bairro = user.string(forKey: "bairro"), let municipio = user.string(forKey: "municipio"), let uf = user.string(forKey: "uf") else {
+            return nil
+        }
+        
         let endereco = Endereco()
         
-        endereco.descricao = user.string(forKey: "descricao")
-        endereco.bairro = user.string(forKey: "bairro")
-        endereco.municipio = user.string(forKey: "municipio")
-        endereco.uf = user.string(forKey: "uf")
+        endereco.descricao = descricao
+        endereco.bairro = bairro
+        endereco.municipio = municipio
+        endereco.uf = uf
         
         return endereco
     }

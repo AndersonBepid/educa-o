@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fj0-fC-Mrv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BUx-T2-QfG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,7 +142,18 @@
                             <constraint firstAttribute="trailing" secondItem="Qx8-1T-cb1" secondAttribute="trailing" id="rKd-kV-nND"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Estados" id="65k-gJ-GmC"/>
+                    <navigationItem key="navigationItem" title="Estados" id="65k-gJ-GmC">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="sv0-lW-cXb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ytl-XE-5ye">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="handleCancelar" destination="wyI-ET-aN5" eventType="touchUpInside" id="7z4-TL-7gF"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="braco" destination="zHK-JS-jOg" id="MJE-Zi-wIa"/>
                         <outlet property="lousa" destination="DKh-cV-dgX" id="9LE-HN-Y1H"/>
@@ -327,7 +338,18 @@
                             <constraint firstItem="qN4-s5-1WW" firstAttribute="centerX" secondItem="RNW-Nb-yw6" secondAttribute="centerX" id="zRD-lG-l1F"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Endereço" id="ebU-FW-ebp"/>
+                    <navigationItem key="navigationItem" title="Endereço" id="ebU-FW-ebp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="y8h-Mb-g9d">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="U01-8p-dpT">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="handleCancelar" destination="kaz-bb-vG9" eventType="touchUpInside" id="7nv-hH-Qww"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bairroLabel" destination="9gf-7r-1Tw" id="QYx-Hx-FgY"/>
                         <outlet property="bairroTF" destination="8Am-aK-hyj" id="hcJ-gM-3X3"/>
@@ -346,7 +368,7 @@
             </objects>
             <point key="canvasLocation" x="594" y="107"/>
         </scene>
-        <!--Busca View Controller-->
+        <!--Busca-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BuscaViewController" customModule="Escolaqui" customModuleProvider="target" sceneMemberID="viewController">
@@ -355,11 +377,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-3A-MoG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.14686546180000001" green="0.2108600833" blue="0.28769469910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="70"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -367,7 +389,7 @@
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="yZf-dQ-wbv" customClass="BuscaSegmentedTableViewCell" customModule="Escolaqui" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yZf-dQ-wbv" id="8VA-SI-yGD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -392,7 +414,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" id="ED5-1d-KYH" customClass="BuscaSwitchTableViewCell" customModule="Escolaqui" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ED5-1d-KYH" id="mNg-Aa-sfW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -400,7 +422,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3V-Cj-JVV">
                                                     <rect key="frame" x="8" y="11" width="302" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.29899540543556213" green="0.37489575147628784" blue="0.42386367917060852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -432,7 +454,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YH-wV-u4c">
-                                <rect key="frame" x="132" y="612" width="110" height="35"/>
+                                <rect key="frame" x="132" y="548" width="110" height="35"/>
                                 <color key="backgroundColor" red="0.04153371602" green="0.3413858414" blue="0.64457243679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Cop-Fs-tli"/>
@@ -463,7 +485,18 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5YH-wV-u4c" secondAttribute="bottom" constant="20" id="iL8-XQ-QOD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ybW-8Q-BFb"/>
+                    <navigationItem key="navigationItem" title="Busca" id="ybW-8Q-BFb">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="8Gi-de-BC9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B4p-t2-acN">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fechar"/>
+                                <connections>
+                                    <action selector="handleFechar" destination="BYZ-38-t0r" eventType="touchUpInside" id="A50-3Y-itE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="localizarBt" destination="5YH-wV-u4c" id="2iO-o7-Ph1"/>
                     </connections>
@@ -475,12 +508,15 @@
         <!--Navigation Controller-->
         <scene sceneID="IQh-az-XMb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fj0-fC-Mrv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationEstados" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fj0-fC-Mrv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="XIV-5M-6Vz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XIV-5M-6Vz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.098039215686274508" green="0.16078431372549018" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.35082563760000002" green="0.75908511879999996" blue="0.69482123849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -494,11 +530,15 @@
         <!--Navigation Controller-->
         <scene sceneID="0z8-54-PfH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1qz-rn-Mpx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationBusca" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1qz-rn-Mpx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qL-49-32J">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4qL-49-32J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.098039215690000001" green="0.16078431369999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.35082563760000002" green="0.75908511879999996" blue="0.69482123849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -513,7 +553,7 @@
         <scene sceneID="eXB-9p-EBb">
             <objects>
                 <collectionViewController id="FSB-27-5bg" customClass="HomeEscolaController" customModule="Escolaqui" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" id="Zur-5P-oIt">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="Zur-5P-oIt">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.09955582768" green="0.15957260130000001" blue="0.2260662615" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -646,33 +686,54 @@
                             <outlet property="delegate" destination="FSB-27-5bg" id="alh-0n-4DZ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Escolas" id="XcB-vQ-ON9"/>
+                    <navigationItem key="navigationItem" title="Escolas" id="XcB-vQ-ON9">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="eDe-LV-km3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gZb-EF-EQ0">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Endereço"/>
+                                <connections>
+                                    <action selector="handleEndereco" destination="FSB-27-5bg" eventType="touchUpInside" id="Wj8-8z-RP7"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="KEI-Lz-PRE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KOr-Zo-Q9E">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Filtrar"/>
+                                <connections>
+                                    <action selector="handleFiltrar" destination="FSB-27-5bg" eventType="touchUpInside" id="a7w-NK-Bxy"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g20-ZW-x12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2284" y="107"/>
+            <point key="canvasLocation" x="2052" y="107"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="aZe-WQ-eh8">
+        <scene sceneID="aSw-oE-I5k">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y7d-gg-Xnn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUx-T2-QfG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="YAw-Yt-zRg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lZv-D9-6QM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.098039215686274508" green="0.16078431372549018" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.098039215690000001" green="0.16078431369999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.35082563757896423" green="0.75908511877059937" blue="0.69482123851776123" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.35082563760000002" green="0.75908511879999996" blue="0.69482123849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="FSB-27-5bg" kind="relationship" relationship="rootViewController" id="hHP-Zq-YTd"/>
+                        <segue destination="FSB-27-5bg" kind="relationship" relationship="rootViewController" id="Tj9-j0-Ygu"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l6Q-t2-aZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8FE-Tb-sAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529" y="107"/>
+            <point key="canvasLocation" x="1333.5999999999999" y="106.59670164917542"/>
         </scene>
     </scenes>
     <resources>

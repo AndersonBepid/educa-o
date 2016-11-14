@@ -17,6 +17,7 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var lousa: UIImageView!
     @IBOutlet weak var mulher: UIImageView!
     @IBOutlet weak var braco: UIImageView!
+    weak var homeEscola: HomeEscolaController?
     
     override func viewDidLoad() {
         
@@ -34,11 +35,11 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
         self.estados = EstadoStore.singleton.getAllEstados()
         
         
-        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
-        labelTitle.text = "Estados"
-        labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
-        labelTitle.font = UIFont.systemFont(ofSize: 20)
-        self.navigationItem.titleView = labelTitle
+//        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
+//        labelTitle.text = "Estados"
+//        labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
+//        labelTitle.font = UIFont.systemFont(ofSize: 20)
+//        self.navigationItem.titleView = labelTitle
         
         // Do any additional setup after loading the view.
     }
@@ -49,6 +50,10 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
         
     }
 
+    @IBAction func handleCancelar() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,6 +94,7 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
             
             nextVC.estado = self.estados[self.item!].nome
             nextVC.bandeira = self.estados[self.item!].bandeira
+            nextVC.homeEscola = self.homeEscola
         }
     }
  

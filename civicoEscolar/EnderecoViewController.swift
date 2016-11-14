@@ -12,6 +12,7 @@ class EnderecoViewController: UIViewController {
 
     var estado: String?
     var bandeira: UIImage?
+    var endereco: Endereco?
     
     @IBOutlet weak var bandeiraImage: UIImageView!
     @IBOutlet weak var estadoLabel: UILabel!
@@ -28,8 +29,11 @@ class EnderecoViewController: UIViewController {
     
     @IBOutlet weak var continuarBt: UIButton!
     
+    weak var homeEscola: HomeEscolaController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.fetchEndereco()
 
         self.continuarBt.layer.shadowRadius = 1
         self.continuarBt.layer.shadowOpacity = 1
@@ -54,15 +58,26 @@ class EnderecoViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(EnderecoViewController.up(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(EnderecoViewController.down(_:)), name: .UIKeyboardWillHide, object: nil)
     }
+    
+    func fetchEndereco() {
+        self.endereco = EnderecoStore.singleton.getEndereco()
+        if let e = self.endereco {
+            self.bairroTF.text = e.bairro
+            self.cidadeTF.text = e.municipio
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func handleCancelar() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func continuar() {
         
-        let endereco = Endereco()
+        self.endereco = Endereco()
         
         
         if (self.ruaTF.text?.isEmpty)! {
@@ -95,12 +110,14 @@ class EnderecoViewController: UIViewController {
             return
         }
         
-        endereco.descricao = "\(self.ruaTF.text!), \(self.numeroTF.text!), \(self.complementoTF.text!)"
-        endereco.bairro = self.bairroTF.text!
-        endereco.municipio = self.cidadeTF.text!
-        endereco.uf = self.estado!
+        endereco?.descricao = "\(self.ruaTF.text!), \(self.numeroTF.text!), \(self.complementoTF.text!)"
+        endereco?.bairro = self.bairroTF.text
+        endereco?.municipio = self.cidadeTF.text
+        endereco?.uf = self.estado
         
         EnderecoStore.singleton.saveEndereco(endereco)
+        self.homeEscola?.fetchEscolas(endereco)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func dismissKeyboard() {
@@ -117,15 +134,5 @@ class EnderecoViewController: UIViewController {
         
         self.view.frame.origin.y = 64
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -13,19 +13,27 @@ private let reuseIdentifier = "cellid"
 class HomeEscolaController: UICollectionViewController {
 
     var escolas: [Escola]?
+    var endereco: Endereco?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchEscolas()
+        self.fetchEscolas(self.endereco)
     }
     
-    private func fetchEscolas() {
-        //        let cord = CLLocation(latitude: -3.011923, longitude: -59.964847)
-        //let cord1 = CLLocation(latitude: -3.007209, longitude: -59.973613)
-        //        guard let localizacao = self.managerLocation.location else {
-        //            return
-        //        }
-        EscolaStore.singleton.fetchEscola(Endereco()) { (escolas: [Escola]?, error: Error?) in
+    func fetchEscolas(_ endereco: Endereco?) {
+        self.endereco = endereco
+        if self.endereco == nil {
+            self.endereco = EnderecoStore.singleton.getEndereco()
+        }
+        
+        guard let e = self.endereco else {
+            self.perform(#selector(self.handleEndereco), with: nil, afterDelay: 0)
+            return
+        }
+        
+        self.lock()
+        EscolaStore.singleton.fetchEscola(e) { (escolas: [Escola]?, error: Error?) in
+            self.unlock()
             if error != nil{
                 print(error!)
                 return
@@ -33,10 +41,21 @@ class HomeEscolaController: UICollectionViewController {
             
             self.escolas = escolas
             self.collectionView?.reloadData()
-            //print(escolas!)
         }
     }
     
+    @IBAction func handleEndereco() {
+        print(#function)
+        let estadosNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationEstados") as! UINavigationController
+        let estadoController = estadosNavigation.viewControllers[0] as! EstadosViewController
+        estadoController.homeEscola = self
+        self.present(estadosNavigation, animated: true, completion: nil)
+    }
+    
+    @IBAction func handleFiltrar() {
+        let navigationBusca = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navigationBusca")
+        self.present(navigationBusca, animated: true, completion: nil)
+    }
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

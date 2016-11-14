@@ -21,11 +21,6 @@ class EscolaStore: NSObject {
     }
     
     func fetchEscola(_ endereco: Endereco, completion: @escaping (_ escolas: [Escola]?, _ error: Error?) -> Void) -> (){
-        //-3.029961, -59.979305
-        //-3.117034, -60.025780 - original
-//        let lat = -3.029961
-//        let long = -59.979305
-        
         self.fetchGeocoder(endereco) {  (_ location: CLLocation?, _ error: Error?)  in
             
             guard let location = location else {
@@ -33,7 +28,7 @@ class EscolaStore: NSObject {
                 return
             }
             
-            let stringUrl = "\(self.baseUrl)/latitude/\(location.coordinate.latitude)/longitude/\(location.coordinate.longitude)/raio/1?quantidadeDeItens=0"
+            let stringUrl = "\(self.baseUrl)/latitude/\(location.coordinate.latitude)/longitude/\(location.coordinate.longitude)/raio/2?quantidadeDeItens=0"
             
             guard let url = URL(string: stringUrl) else {
                 return
@@ -66,7 +61,12 @@ class EscolaStore: NSObject {
     }
     
     func fetchGeocoder(_ endereco: Endereco, completion: @escaping (_ location: CLLocation?, _ error: Error?) -> Void) -> () {
-        CLGeocoder().geocodeAddressString("\(endereco)"){ (placemarks, error) in
+        guard let descricao = endereco.descricao, let bairro = endereco.bairro, let municipio = endereco.municipio, let uf = endereco.uf else {
+            completion(nil, NSError())
+            return
+        }
+        let enderecoString = "\(descricao) \(bairro) \(municipio) \(uf)"
+        CLGeocoder().geocodeAddressString("\(enderecoString)"){ (placemarks, error) in
             if let location = placemarks?.first?.location {
                 
                 print("Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)")

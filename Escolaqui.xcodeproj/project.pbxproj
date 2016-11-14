@@ -27,11 +27,13 @@
 		6417E2791DDA1F6700D164DD /* BuscaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */; };
 		6417E27A1DDA1F6700D164DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */; };
 		6417E27B1DDA219800D164DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF43C1DC821D7007CC9D5 /* Main.storyboard */; };
+		6417E27D1DDA497200D164DD /* ViewController+LockUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417E27C1DDA497200D164DD /* ViewController+LockUnlock.swift */; };
 		64DCF4431DC821D7007CC9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4421DC821D7007CC9D5 /* Assets.xcassets */; };
 		64DCF4461DC821D7007CC9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4441DC821D7007CC9D5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6417E27C1DDA497200D164DD /* ViewController+LockUnlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+LockUnlock.swift"; sourceTree = "<group>"; };
 		645E89111DCB747D00D5C43B /* CellHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHome.swift; sourceTree = "<group>"; };
 		645E89131DCB836F00D5C43B /* DetalheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheController.swift; sourceTree = "<group>"; };
 		647784521DCAAB0700F2922D /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		6493CB5D1DD4257900198BF8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				6417E27C1DDA497200D164DD /* ViewController+LockUnlock.swift */,
 				6493CB5E1DD4258A00198BF8 /* Extension+UIColor.swift */,
 			);
 			name = Util;
@@ -239,6 +242,7 @@
 				6417DBCB1DDA1F29009B25AA /* EnderecoStore.swift in Sources */,
 				6417DBCC1DDA1F29009B25AA /* InfraStore.swift in Sources */,
 				6417DBC51DDA1F23009B25AA /* EstadosCollectionViewCell.swift in Sources */,
+				6417E27D1DDA497200D164DD /* ViewController+LockUnlock.swift in Sources */,
 				6417DBC61DDA1F23009B25AA /* BuscaTableViewCell.swift in Sources */,
 				6417DBC41DDA1F1D009B25AA /* Extension+UIColor.swift in Sources */,
 			);
