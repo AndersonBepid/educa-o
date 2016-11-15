@@ -66,6 +66,12 @@ class EnderecoViewController: UIViewController {
             self.cidadeTF.text = e.municipio
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        self.view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -127,7 +133,7 @@ class EnderecoViewController: UIViewController {
     
     func up(_ notification: Notification) {
         
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -70
     }
     
     func down(_ notification: Notification) {
