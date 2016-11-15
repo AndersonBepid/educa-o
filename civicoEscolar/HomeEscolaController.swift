@@ -15,6 +15,9 @@ class HomeEscolaController: UICollectionViewController {
     var escolas: [Escola]?
     var endereco: Endereco?
     
+    @IBOutlet weak var labelSemEscola: UILabel!
+    let refresh = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchEscolas(self.endereco)
@@ -30,11 +33,13 @@ class HomeEscolaController: UICollectionViewController {
             self.perform(#selector(self.handleEndereco), with: nil, afterDelay: 0)
             return
         }
-        
-        self.lock()
+        if !self.refresh.isRefreshing {
+            self.lock()
+        }
         EscolaStore.singleton.fetchEscola(e) { (escolas: [Escola]?, error: Error?) in
             self.unlock()
             self.escolas = escolas
+            self.refresh.endRefreshing()
             if error != nil{
                 print(error!)
                 return
@@ -42,6 +47,13 @@ class HomeEscolaController: UICollectionViewController {
 
             self.collectionView?.reloadData()
         }
+        refresh.backgroundColor = UIColor.faixa
+        refresh.addTarget(self, action: #selector(self.atualizar), for: .valueChanged)
+        self.collectionView?.refreshControl = refresh
+    }
+    
+    func atualizar() {
+        self.fetchEscolas(self.endereco)
     }
     
     @IBAction func handleEndereco() {
@@ -77,16 +89,26 @@ class HomeEscolaController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detalhe = DetalheController()
-        detalhe.escola = self.escolas?[indexPath.item]
-        self.navigationController?.pushViewController(detalhe, animated: true)
+        self.performSegue(withIdentifier: "detalhe", sender: self)
     }
     
     func filtrarEscolas(_ itens: [ItemFiltro]) {
         self.escolas = EscolaStore.singleton.escolas.filter { (escola: Escola) -> Bool in
             return escola.constainsInfra(itens: itens)
         }
+        if let e = self.escolas, e.isEmpty {
+            self.labelSemEscola.isHidden = false
+        } else {
+            self.labelSemEscola.isHidden = true
+        }
         self.collectionView?.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalhe" {
+            let vc = segue.destination as! DetalheViewController
+            vc.escola = self.escolas?[self.collectionView?.indexPathsForSelectedItems?[0].item ?? 0]
+        }
     }
 }
 

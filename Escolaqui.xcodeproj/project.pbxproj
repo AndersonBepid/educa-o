@@ -28,6 +28,7 @@
 		6417E27A1DDA1F6700D164DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */; };
 		6417E27B1DDA219800D164DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF43C1DC821D7007CC9D5 /* Main.storyboard */; };
 		6417E27D1DDA497200D164DD /* ViewController+LockUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417E27C1DDA497200D164DD /* ViewController+LockUnlock.swift */; };
+		64D3A5AA1DDA8B4000685447 /* DetalheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D3A5A91DDA8B4000685447 /* DetalheViewController.swift */; };
 		64DCF4431DC821D7007CC9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4421DC821D7007CC9D5 /* Assets.xcassets */; };
 		64DCF4461DC821D7007CC9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64DCF4441DC821D7007CC9D5 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		64A1F5831DD906BF00B0D2B5 /* CellEscola.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellEscola.swift; sourceTree = "<group>"; };
 		64D0957D1DCAE0000057B715 /* Escola.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Escola.swift; sourceTree = "<group>"; };
 		64D0957F1DCAE3FF0057B715 /* EscolaStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EscolaStore.swift; sourceTree = "<group>"; };
+		64D3A5A91DDA8B4000685447 /* DetalheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheViewController.swift; sourceTree = "<group>"; };
 		64DCF4351DC821D7007CC9D5 /* Escolaqui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Escolaqui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DCF4381DC821D7007CC9D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64DCF43D1DC821D7007CC9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				A0F7CE861DD66488001B1E77 /* EstadosViewController.swift */,
 				A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */,
 				A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */,
+				64D3A5A91DDA8B4000685447 /* DetalheViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				6417E2751DDA1F6700D164DD /* DetalheController.swift in Sources */,
 				6417E2761DDA1F6700D164DD /* HomeEscolaController.swift in Sources */,
 				6417E2771DDA1F6700D164DD /* EstadosViewController.swift in Sources */,
+				64D3A5AA1DDA8B4000685447 /* DetalheViewController.swift in Sources */,
 				6417E2781DDA1F6700D164DD /* EnderecoViewController.swift in Sources */,
 				6417E2791DDA1F6700D164DD /* BuscaViewController.swift in Sources */,
 				6417E27A1DDA1F6700D164DD /* AppDelegate.swift in Sources */,

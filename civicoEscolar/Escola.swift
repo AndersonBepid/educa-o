@@ -142,7 +142,7 @@ class Escola: NSObject {
         for item in itens {
             if let chave = item.chave, chave == "rede" {
                 if let d = self.value(forKey: chave) as? String {
-                    if d == "Privada" {
+                    if d == "Publica" {
                         continue
                     } else {
                         return false
