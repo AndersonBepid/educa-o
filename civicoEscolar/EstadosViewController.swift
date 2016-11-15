@@ -17,11 +17,17 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var lousa: UIImageView!
     @IBOutlet weak var mulher: UIImageView!
     @IBOutlet weak var braco: UIImageView!
+    @IBOutlet weak var fecharBt: UIBarButtonItem!
+    
+    
     weak var homeEscola: HomeEscolaController?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.fecharBt.customView?.layer.shadowRadius = 1
+        self.fecharBt.customView?.layer.shadowOpacity = 0.5
         
         self.mulher.layer.shadowRadius = 1
         self.mulher.layer.shadowOpacity = 1

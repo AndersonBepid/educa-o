@@ -61,13 +61,17 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     weak var homeEscola: HomeEscolaController?
     
     @IBOutlet weak var localizarBt: UIButton!
+    @IBOutlet weak var fecharBt: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.localizarBt.layer.shadowRadius = 1
         self.localizarBt.layer.shadowOpacity = 1
-
+        
+        self.fecharBt.customView?.layer.shadowRadius = 1
+        self.fecharBt.customView?.layer.shadowOpacity = 0.5
+        
         self.rede = InfraStore.singleton.getInfra().0
         self.infra = SectionInfra(InfraStore.singleton.getInfra().1)
         

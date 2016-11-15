@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "filter-2.png",
+      "filename" : "voltar.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "filter.png",
+      "filename" : "voltar@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "voltar@3x.png",
       "scale" : "3x"
     }
   ],
