@@ -16,6 +16,8 @@ class EscolaStore: NSObject {
     static let singleton: EscolaStore = EscolaStore()
     let baseUrl: String = "http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS/rest/escolas"
     
+    var escolas: [Escola] = []
+    
     private override init() {
         super.init()
     }
@@ -50,6 +52,7 @@ class EscolaStore: NSObject {
                             escolas.append(escola)
                         }
                     }
+                    self.escolas = escolas
                     DispatchQueue.main.async {
                         completion(escolas, nil)
                     }

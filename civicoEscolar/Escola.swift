@@ -138,6 +138,29 @@ class Escola: NSObject {
         }
     }
     
+    func constainsInfra(itens: [ItemFiltro]) -> Bool{
+        for item in itens {
+            if let chave = item.chave, chave == "rede" {
+                if let d = self.value(forKey: chave) as? String {
+                    if d == "Privada" {
+                        continue
+                    } else {
+                        return false
+                    }
+                }
+            } else if let chave = item.chave {
+                if let d = self.infraestrutura?.value(forKey: chave) as? String {
+                    if d == "S" {
+                        continue
+                    } else {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
     override var description: String {
         get {
             return "\(self.nome), \(self.rede), \(self.codEscola)"

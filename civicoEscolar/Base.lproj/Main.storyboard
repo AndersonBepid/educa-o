@@ -401,6 +401,9 @@
                                                         <segment title="Pública"/>
                                                         <segment title="Privada"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="handleSegmented:" destination="yZf-dQ-wbv" eventType="valueChanged" id="HCr-DH-8Kt"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>

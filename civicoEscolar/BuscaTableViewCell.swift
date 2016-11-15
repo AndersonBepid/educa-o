@@ -9,17 +9,16 @@
 import UIKit
 
 class BuscaSwitchTableViewCell: UITableViewCell {
-
-    var valor : (String, Bool)? {
+    
+    weak var item : ItemFiltro? {
         didSet{
-            
             let view = UIView()
             view.backgroundColor = UIColor.background
-        
+            
             self.selectedBackgroundView = view
             
-            self.indicadorLabel.text = valor?.0
-            if let b = valor?.1 {
+            self.indicadorLabel.text = item?.nomeItem
+            if let b = item?.valor {
                 self.valorSwitch.isOn = b
             }else {
                 self.valorSwitch.isOn = false
@@ -31,12 +30,34 @@ class BuscaSwitchTableViewCell: UITableViewCell {
     @IBOutlet weak var valorSwitch: UISwitch!
     
     @IBAction func handleSwitch(_ sender: UISwitch) {
-        self.valor?.1 = sender.isOn
+        self.item?.valor = sender.isOn
     }
     
 }
 
 class BuscaSegmentedTableViewCell: UITableViewCell {
     
+    weak var item : ItemFiltro? {
+        didSet{
+            let view = UIView()
+            view.backgroundColor = UIColor.background
+            self.selectedBackgroundView = view
+            
+            if let b = item?.valor, b == true {
+                self.escolaSegmented.selectedSegmentIndex = 1
+            }else {
+                self.escolaSegmented.selectedSegmentIndex = 0
+            }
+        }
+    }
+    
     @IBOutlet weak var escolaSegmented: UISegmentedControl!
+    
+    @IBAction func handleSegmented(_ sender: Any) {
+        if self.escolaSegmented.selectedSegmentIndex == 0 {
+            self.item?.valor = false
+        } else {
+            self.item?.valor = true
+        }
+    }
 }
