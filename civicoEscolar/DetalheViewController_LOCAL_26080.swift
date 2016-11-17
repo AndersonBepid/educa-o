@@ -9,8 +9,7 @@
 import UIKit
 
 class DetalheViewController: UIViewController {
-    
-    @IBOutlet weak var voltarBt: UIBarButtonItem!
+
     
     @IBOutlet weak var labelBairro: UILabel!
     @IBOutlet weak var labelTelefone: UILabel!
@@ -31,26 +30,13 @@ class DetalheViewController: UIViewController {
     @IBOutlet weak var tableCaract: UITableView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.voltarBt.customView?.layer.shadowRadius = 1
-        self.voltarBt.customView?.layer.shadowOpacity = 0.5
-        
         self.navigationItem.title = "Detalhe"
         self.setupViews()
         self.tableCaract.delegate = self
         self.tableCaract.dataSource = self
         self.infra = self.escola?.infraestrutura
     }
-    
-    
-    @IBAction func voltar() {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    
     
     func setupViews() {
         if let nome = escola?.nome {

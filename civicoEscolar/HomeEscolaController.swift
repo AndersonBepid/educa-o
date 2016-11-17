@@ -16,10 +16,23 @@ class HomeEscolaController: UICollectionViewController {
     var endereco: Endereco?
     
     @IBOutlet weak var labelSemEscola: UILabel!
+    @IBOutlet weak var filtroBt: UIBarButtonItem!
+    @IBOutlet weak var bandeiraBt: UIBarButtonItem!
+    
     let refresh = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*** If needed Assign Title Here ***/
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        
+        self.bandeiraBt.customView?.layer.shadowRadius = 1
+        self.bandeiraBt.customView?.layer.shadowOpacity = 0.5
+
+        self.filtroBt.customView?.layer.shadowRadius = 1
+        self.filtroBt.customView?.layer.shadowOpacity = 0.5
+        
         self.fetchEscolas(self.endereco)
     }
     
@@ -36,6 +49,7 @@ class HomeEscolaController: UICollectionViewController {
         if !self.refresh.isRefreshing {
             self.lock()
         }
+        ItemFiltroStore.singleton.zerarStatus()
         EscolaStore.singleton.fetchEscola(e) { (escolas: [Escola]?, error: Error?) in
             self.unlock()
             self.escolas = escolas

@@ -14,6 +14,9 @@ class EnderecoViewController: UIViewController {
     var bandeira: UIImage?
     var endereco: Endereco?
     
+    @IBOutlet weak var fecharBt: UIBarButtonItem!
+    @IBOutlet weak var voltarBt: UIBarButtonItem!
+    
     @IBOutlet weak var bandeiraImage: UIImageView!
     @IBOutlet weak var estadoLabel: UILabel!
     
@@ -35,6 +38,12 @@ class EnderecoViewController: UIViewController {
         super.viewDidLoad()
         self.fetchEndereco()
 
+        self.voltarBt.customView?.layer.shadowRadius = 1
+        self.voltarBt.customView?.layer.shadowOpacity = 0.5
+        
+        self.fecharBt.customView?.layer.shadowRadius = 1
+        self.fecharBt.customView?.layer.shadowOpacity = 0.5
+        
         self.continuarBt.layer.shadowRadius = 1
         self.continuarBt.layer.shadowOpacity = 1
         
@@ -66,11 +75,23 @@ class EnderecoViewController: UIViewController {
             self.cidadeTF.text = e.municipio
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        self.view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func voltar() {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func handleCancelar() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -127,7 +148,7 @@ class EnderecoViewController: UIViewController {
     
     func up(_ notification: Notification) {
         
-        self.view.frame.origin.y = -150
+        self.view.frame.origin.y = -70
     }
     
     func down(_ notification: Notification) {

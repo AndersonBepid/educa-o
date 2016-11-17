@@ -88,8 +88,13 @@ class DetalheViewController: UIViewController {
         } else {
             self.labelTipoEscola.text = nil
         }
+<<<<<<< HEAD
         if let descricao = self.escola?.endereco?.descricao {
             self.labelEnderecoDescricao.text = "Endereço: \(descricao.lowercased())"
+=======
+        if let descricao = self.escola.endereco?.descricao {
+            self.labelEnderecoDescricao.text = "Endereço: \(descricao)"
+>>>>>>> 7ccb093ce503789efb088222128daf0a59d84ffc
         } else {
             self.labelEnderecoDescricao.text = nil
         }
