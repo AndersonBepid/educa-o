@@ -22,7 +22,7 @@ class DetalheViewController: UIViewController {
     @IBOutlet weak var labelTipoEscola: UILabel!
     @IBOutlet weak var labelEnderecoDescricao: UILabel!
     
-    weak var escola: Escola!
+    weak var escola: Escola?
     var infra: Infraestutura?
     
     @IBOutlet weak var nomeHeightConstraint: NSLayoutConstraint!
@@ -35,36 +35,46 @@ class DetalheViewController: UIViewController {
         self.setupViews()
         self.tableCaract.delegate = self
         self.tableCaract.dataSource = self
-        self.infra = self.escola.infraestrutura
+        self.infra = self.escola?.infraestrutura
     }
     
     func setupViews() {
-        if let nome = escola.nome {
+        if let nome = escola?.nome {
             let rect = nome.rect(view: self.labelNome)
             self.nomeHeightConstraint.constant = rect.height + 20
             self.labelNome.text = nome
+        } else {
+            self.labelNome.text = nil
         }
-        if let bairro = escola.endereco?.bairro{
+        if let bairro = escola?.endereco?.bairro{
             self.labelBairro.text = "Bairro: \(bairro)"
+        } else {
+            self.labelBairro.text = nil
         }
-        if let telefone = escola.telefone {
+        if let telefone = escola?.telefone {
             self.labelTelefone.text = "Telefone: \(telefone)"
+        } else {
+            self.labelTelefone.text = nil
         }
-        if let email = escola.email {
+        if let email = escola?.email {
             self.labelEmail.text = "Email: \(email.lowercased())"
+        } else {
+            self.labelEmail.text = nil
         }
         
-        if let media = escola.ideb?.media {
+        if let media = escola?.ideb?.media {
             self.labelIdeb.text = String(format: "%.1f", media)
         } else {
             self.labelIdeb.isHidden = true
             self.imageIdeb.isHidden = true
         }
         
-        if let rede = self.escola.rede {
+        if let rede = self.escola?.rede {
             self.labelTipoEscola.text = "Rede: \(rede)"
+        } else {
+            self.labelTipoEscola.text = nil
         }
-        if let descricao = self.escola.endereco?.descricao {
+        if let descricao = self.escola?.endereco?.descricao {
             self.labelEnderecoDescricao.text = "Endereço: \(descricao.lowercased())"
         } else {
             self.labelEnderecoDescricao.text = nil

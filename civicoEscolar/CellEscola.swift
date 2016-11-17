@@ -49,15 +49,23 @@ class CellEscola: UICollectionViewCell {
             self.nomeEscola.text = nome
             let r = nome.rect(view: self)
             self.containerNomeHeigthConstraint.constant = r.height + 20
+        } else {
+            self.nomeEscola.text = nil
         }
         if let bairro = self.escola?.endereco?.bairro {
             self.bairroEscola.text = "Bairro: \(bairro)"
+        } else {
+            self.bairroEscola.text = nil
         }
         if let telefone = self.escola?.telefone {
             self.telefoneEscola.text = "Telefone: \(telefone)"
+        } else {
+            self.telefoneEscola.text = nil
         }
         if let email = self.escola?.email {
             self.emailEscola.text = "Email: \(email.lowercased())"
+        } else {
+            self.emailEscola.text = nil
         }
         
         guard let id = self.escola?.codEscola else {

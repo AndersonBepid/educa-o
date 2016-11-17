@@ -40,12 +40,10 @@ class HomeEscolaController: UICollectionViewController {
             self.unlock()
             self.escolas = escolas
             self.refresh.endRefreshing()
+            self.collectionView?.reloadData()
             if error != nil{
                 print(error!)
-                return
             }
-
-            self.collectionView?.reloadData()
         }
         refresh.backgroundColor = UIColor.faixa
         refresh.addTarget(self, action: #selector(self.atualizar), for: .valueChanged)
