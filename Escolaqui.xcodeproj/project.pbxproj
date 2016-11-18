@@ -46,6 +46,8 @@
 		64DCF4421DC821D7007CC9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64DCF4451DC821D7007CC9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64DCF4471DC821D7007CC9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A09D18A51DDE3D46002D76A0 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		A09D18A61DDE3D46002D76A0 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A0F4A7831DD9268900C7DB4C /* EnderecoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecoViewController.swift; sourceTree = "<group>"; };
 		A0F4A7851DD965F300C7DB4C /* EnderecoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnderecoStore.swift; sourceTree = "<group>"; };
 		A0F4A7871DD985E300C7DB4C /* BuscaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuscaViewController.swift; sourceTree = "<group>"; };
@@ -188,7 +190,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 64DCF42C1DC821D7007CC9D5;
@@ -247,6 +248,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				64DCF43D1DC821D7007CC9D5 /* Base */,
+				A09D18A51DDE3D46002D76A0 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -255,6 +257,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				64DCF4451DC821D7007CC9D5 /* Base */,
+				A09D18A61DDE3D46002D76A0 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -362,7 +365,7 @@
 				DEVELOPMENT_TEAM = 2577FS5BXM;
 				INFOPLIST_FILE = civicoEscolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.teamdavt.civicoEscolar;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.andersonoliveira.escolaqui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -376,7 +379,7 @@
 				DEVELOPMENT_TEAM = 2577FS5BXM;
 				INFOPLIST_FILE = civicoEscolar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.teamdavt.civicoEscolar;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.andersonoliveira.escolaqui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

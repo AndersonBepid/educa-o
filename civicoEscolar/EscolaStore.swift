@@ -16,7 +16,7 @@ class EscolaStore: NSObject {
     static let singleton: EscolaStore = EscolaStore()
     let baseUrl: String = "http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS/rest/escolas"
     
-    var escolas: [Escola] = []
+    var escolas: [Escola]? = []
     
     private override init() {
         super.init()
@@ -25,7 +25,7 @@ class EscolaStore: NSObject {
     func fetchEscola(_ endereco: Endereco, completion: @escaping (_ escolas: [Escola]?, _ error: Error?) -> Void) -> (){
         print(endereco)
         self.fetchGeocoder(endereco) {  (_ location: CLLocation?, _ error: Error?)  in
-            
+            self.escolas = nil
             guard let location = location else {
                 completion(nil, error)
                 return

@@ -1,0 +1,117 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Mq-iV-m7W"; */
+"0Mq-iV-m7W.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "2Qw-8f-9YD"; */
+"2Qw-8f-9YD.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Localizar"; ObjectID = "5YH-wV-u4c"; */
+"5YH-wV-u4c.normalTitle" = "Localizar";
+
+/* Class = "UINavigationItem"; title = "Estados"; ObjectID = "65k-gJ-GmC"; */
+"65k-gJ-GmC.title" = "Estados";
+
+/* Class = "UILabel"; text = "IDEB"; ObjectID = "6Pp-cq-R1I"; */
+"6Pp-cq-R1I.text" = "IDEB";
+
+/* Class = "UILabel"; text = "IDEB"; ObjectID = "6Zv-Mv-0Ph"; */
+"6Zv-Mv-0Ph.text" = "IDEB";
+
+/* Class = "UILabel"; text = "Bairro*"; ObjectID = "9gf-7r-1Tw"; */
+"9gf-7r-1Tw.text" = "Bairro*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Eee-PB-v3z"; */
+"Eee-PB-v3z.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Continuar"; ObjectID = "RNW-Nb-yw6"; */
+"RNW-Nb-yw6.normalTitle" = "Continuar";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "RdR-zH-fnM"; */
+"RdR-zH-fnM.text" = "Email:";
+
+/* Class = "UILabel"; text = "Rua*"; ObjectID = "Und-RT-NNi"; */
+"Und-RT-NNi.text" = "Rua*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Uq6-1i-apG"; */
+"Uq6-1i-apG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VkL-AC-zGj"; */
+"VkL-AC-zGj.text" = "Label";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "WrK-of-ysI"; */
+"WrK-of-ysI.text" = "Email:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "X3V-Cj-JVV"; */
+"X3V-Cj-JVV.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Escolas"; ObjectID = "XcB-vQ-ON9"; */
+"XcB-vQ-ON9.title" = "Escolas";
+
+/* Class = "UILabel"; text = "Escola ..."; ObjectID = "YAW-e1-Ybq"; */
+"YAW-e1-Ybq.text" = "Escola ...";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "b1x-UO-Xaf"; */
+"b1x-UO-Xaf.text" = "Title";
+
+/* Class = "UILabel"; text = "Telefone:"; ObjectID = "cIf-3F-98c"; */
+"cIf-3F-98c.text" = "Telefone:";
+
+/* Class = "UILabel"; text = "Bairro:"; ObjectID = "cq7-8o-SMr"; */
+"cq7-8o-SMr.text" = "Bairro:";
+
+/* Class = "UILabel"; text = "Complemento"; ObjectID = "dMZ-ov-Pda"; */
+"dMZ-ov-Pda.text" = "Complemento";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eQC-G0-lff"; */
+"eQC-G0-lff.text" = "Label";
+
+/* Class = "UILabel"; text = "3,4"; ObjectID = "eQR-YQ-KoK"; */
+"eQR-YQ-KoK.text" = "3,4";
+
+/* Class = "UINavigationItem"; title = "Endereço"; ObjectID = "ebU-FW-ebp"; */
+"ebU-FW-ebp.title" = "Endereço";
+
+/* Class = "UILabel"; text = "Telefone:"; ObjectID = "ec8-3Z-YXV"; */
+"ec8-3Z-YXV.text" = "Telefone:";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "flT-NQ-lBM"; */
+"flT-NQ-lBM.text" = "Detail";
+
+/* Class = "UILabel"; text = "Olá, selecione seu estado."; ObjectID = "gnQ-1q-uiH"; */
+"gnQ-1q-uiH.text" = "Olá, selecione seu estado.";
+
+/* Class = "UILabel"; text = "Cidade*"; ObjectID = "jmB-PN-YHC"; */
+"jmB-PN-YHC.text" = "Cidade*";
+
+/* Class = "UILabel"; text = "Número"; ObjectID = "mCR-qz-GSV"; */
+"mCR-qz-GSV.text" = "Número";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "n7s-Yl-hCI"; */
+"n7s-Yl-hCI.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "oV6-2L-4Va"; */
+"oV6-2L-4Va.title" = "Item";
+
+/* Class = "UILabel"; text = "* preenchimento obrigatório"; ObjectID = "qN4-s5-1WW"; */
+"qN4-s5-1WW.text" = "* preenchimento obrigatório";
+
+/* Class = "UILabel"; text = "3,4"; ObjectID = "sSG-48-y8a"; */
+"sSG-48-y8a.text" = "3,4";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "sv0-lW-cXb"; */
+"sv0-lW-cXb.title" = "Item";
+
+/* Class = "UISegmentedControl"; uLF-xY-sqo.segmentTitles[0] = "Pública"; ObjectID = "uLF-xY-sqo"; */
+"uLF-xY-sqo.segmentTitles[0]" = "Pública";
+
+/* Class = "UISegmentedControl"; uLF-xY-sqo.segmentTitles[1] = "Privada"; ObjectID = "uLF-xY-sqo"; */
+"uLF-xY-sqo.segmentTitles[1]" = "Privada";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "y8h-Mb-g9d"; */
+"y8h-Mb-g9d.title" = "Item";
+
+/* Class = "UILabel"; text = "Nenhuma escola encontrada"; ObjectID = "yZs-KA-QlP"; */
+"yZs-KA-QlP.text" = "Nenhuma escola encontrada";
+
+/* Class = "UINavigationItem"; title = "Busca"; ObjectID = "ybW-8Q-BFb"; */
+"ybW-8Q-BFb.title" = "Busca";

@@ -55,6 +55,7 @@ class HomeEscolaController: UICollectionViewController {
             self.escolas = escolas
             self.refresh.endRefreshing()
             self.collectionView?.reloadData()
+            
             if error != nil{
                 print(error!)
             }
@@ -63,6 +64,8 @@ class HomeEscolaController: UICollectionViewController {
         refresh.addTarget(self, action: #selector(self.atualizar), for: .valueChanged)
         self.collectionView?.refreshControl = refresh
     }
+    
+    
     
     func atualizar() {
         self.fetchEscolas(self.endereco)
@@ -105,13 +108,13 @@ class HomeEscolaController: UICollectionViewController {
     }
     
     func filtrarEscolas(_ itens: [ItemFiltro]) {
-        self.escolas = EscolaStore.singleton.escolas.filter { (escola: Escola) -> Bool in
+        self.escolas = EscolaStore.singleton.escolas?.filter { (escola: Escola) -> Bool in
             return escola.constainsInfra(itens: itens)
         }
         if let e = self.escolas, e.isEmpty {
-            self.labelSemEscola.isHidden = false
-        } else {
             self.labelSemEscola.isHidden = true
+        } else {
+            self.labelSemEscola.isHidden = false
         }
         self.collectionView?.reloadData()
     }
