@@ -27,12 +27,6 @@ class HomeEscolaController: UICollectionViewController {
         /*** If needed Assign Title Here ***/
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
-        self.bandeiraBt.customView?.layer.shadowRadius = 1
-        self.bandeiraBt.customView?.layer.shadowOpacity = 0.5
-
-        self.filtroBt.customView?.layer.shadowRadius = 1
-        self.filtroBt.customView?.layer.shadowOpacity = 0.5
-        
         self.fetchEscolas(self.endereco)
     }
     

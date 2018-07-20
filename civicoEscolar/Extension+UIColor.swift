@@ -53,3 +53,11 @@ extension UIColor {
     }
     
 }
+
+public func shadow(to layer: CALayer, color: UIColor) {
+    
+    layer.shadowOpacity = 3.0
+    layer.shadowOffset = CGSize(width: 3, height: 3)
+    layer.shadowRadius = 5.0
+    layer.shadowColor = color.cgColor
+}

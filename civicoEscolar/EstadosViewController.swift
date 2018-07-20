@@ -23,11 +23,7 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
     weak var homeEscola: HomeEscolaController?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        self.fecharBt.customView?.layer.shadowRadius = 1
-        self.fecharBt.customView?.layer.shadowOpacity = 0.5
         
         self.mulher.layer.shadowRadius = 1
         self.mulher.layer.shadowOpacity = 1
@@ -51,9 +47,11 @@ class EstadosViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         super.viewDidAppear(animated)
         
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        }
     }
 
     @IBAction func handleCancelar() {

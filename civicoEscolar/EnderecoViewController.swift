@@ -13,8 +13,10 @@ class EnderecoViewController: UIViewController {
     var estado: String?
     var bandeira: UIImage?
     var endereco: Endereco?
+    let widthView = UIScreen.main.bounds.width
     
-    @IBOutlet weak var fecharBt: UIBarButtonItem!
+    @IBOutlet weak var svEndereco: UIStackView!
+    
     @IBOutlet weak var voltarBt: UIBarButtonItem!
     
     @IBOutlet weak var bandeiraImage: UIImageView!
@@ -30,31 +32,21 @@ class EnderecoViewController: UIViewController {
     @IBOutlet weak var bairroTF: UITextField!
     @IBOutlet weak var cidadeTF: UITextField!
     
-    @IBOutlet weak var continuarBt: UIButton!
+    @IBOutlet weak var continuarBt: UIBarButtonItem!
     
     weak var homeEscola: HomeEscolaController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = false
+        }
+        
         self.fetchEndereco()
-
-        self.voltarBt.customView?.layer.shadowRadius = 1
-        self.voltarBt.customView?.layer.shadowOpacity = 0.5
-        
-        self.fecharBt.customView?.layer.shadowRadius = 1
-        self.fecharBt.customView?.layer.shadowOpacity = 0.5
-        
-        self.continuarBt.layer.shadowRadius = 1
-        self.continuarBt.layer.shadowOpacity = 1
         
         self.bandeiraImage.image = self.bandeira
         self.estadoLabel.text = self.estado
-        
-        let labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: self.view.frame.height))
-        labelTitle.text = "Endereço"
-        labelTitle.textColor = UIColor(r: 89, g: 194, b: 177)
-        labelTitle.font = UIFont.systemFont(ofSize: 20)
-        self.navigationItem.titleView = labelTitle
         
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(EnderecoViewController.dismissKeyboard))
         swipe.direction = .down
@@ -92,15 +84,9 @@ class EnderecoViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func handleCancelar() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func continuar() {
         
         self.endereco = Endereco()
-        
-        
         if (self.ruaTF.text?.isEmpty)! {
             
             self.ruaLabel.frame.origin.x += 20
@@ -148,12 +134,16 @@ class EnderecoViewController: UIViewController {
     
     func up(_ notification: Notification) {
         
-        self.view.frame.origin.y = -70
+        if self.widthView <= 320.0 {
+            self.svEndereco.transform = CGAffineTransform(translationX: 0, y: -35)
+        }
     }
     
     func down(_ notification: Notification) {
         
-        self.view.frame.origin.y = 64
+        if self.widthView <= 320.0 {
+            self.svEndereco.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
     }
 
 }

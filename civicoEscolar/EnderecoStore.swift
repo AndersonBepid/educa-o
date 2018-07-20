@@ -29,12 +29,10 @@ class EnderecoStore: NSObject {
         guard let e = endereco else {
             return
         }
-        print("pre-fudeu")
         self.user.set(e.descricao, forKey: "descricao")
         self.user.set(e.bairro, forKey: "bairro")
         self.user.set(e.municipio, forKey: "municipio")
         self.user.set(e.uf, forKey: "uf")
-        print("passou")
     }
     
     func getEndereco() -> Endereco? {

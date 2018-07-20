@@ -25,6 +25,7 @@ class CellEscola: UICollectionViewCell {
     @IBOutlet weak var emailEscola: UILabel!
     @IBOutlet weak var idebEscola: UILabel!
     @IBOutlet weak var imageIdeb: UIImageView!
+    @IBOutlet weak var lblIIdeb: UILabel!
     
     @IBOutlet weak var containerNomeHeigthConstraint: NSLayoutConstraint!
     
@@ -83,17 +84,21 @@ class CellEscola: UICollectionViewCell {
                     self.idebEscola.text = String(format: "%.1f", media)
                     self.imageIdeb.isHidden = false
                     self.idebEscola.isHidden = false
+                    self.lblIIdeb.isHidden = false
                 } else {
                     self.imageIdeb.isHidden = true
                     self.idebEscola.isHidden = true
+                    self.lblIIdeb.isHidden = true
                 }
             } else if let media = ideb?.media {
                 self.idebEscola.text = String(format: "%.1f", media)
                 self.imageIdeb.isHidden = false
                 self.idebEscola.isHidden = false
+                self.lblIIdeb.isHidden = false
             } else {
                 self.imageIdeb.isHidden = true
                 self.idebEscola.isHidden = true
+                self.lblIIdeb.isHidden = true
             }
         }
     }

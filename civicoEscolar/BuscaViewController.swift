@@ -36,7 +36,7 @@ class ItemFiltroStore: NSObject {
             [("Coberta", "temQuadraEsporteCoberta", false), ("Descoberta", "temQuadraEsporteDescoberta", false)],
             [("Ciências", "temLaboratorioCiencias", false), ("Informática","temLaboratorioInformatica", false)],
             [("Creche", "temCreche", false), ("Berçário", "temBercario", false), ("Acessibilidade", "temAcessibilidade", false), ("Parque Infantil", "temParqueInfantil", false),("Biblioteca", "temBiblioteca", false), ("Área Verde", "temAreaVerde", false)], [("", "rede", false)]]
-        let tittleSections = ["Ensino", "Educação", "Quadra", "Laboratório", "Outros", "Escola"]
+        let tittleSections = ["Ensino", "Educação", "Quadra", "Laboratório", "Outros"]
         
         
         for (index, section) in tittleSections.enumerated() {
@@ -73,12 +73,6 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.localizarBt.layer.shadowRadius = 1
-        self.localizarBt.layer.shadowOpacity = 1
-        
-        self.fecharBt.customView?.layer.shadowRadius = 1
-        self.fecharBt.customView?.layer.shadowOpacity = 0.5
         
         self.rede = InfraStore.singleton.getInfra().0
         self.infra = SectionInfra(InfraStore.singleton.getInfra().1)
@@ -123,19 +117,11 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let keys = Array(ItemFiltroStore.singleton.itens.keys)
+            
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2") as! BuscaSwitchTableViewCell
+        cell.item = ItemFiltroStore.singleton.itens[keys[indexPath.section]]?[indexPath.item]
         
-        if keys[indexPath.section] == "Escola" {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1") as! BuscaSegmentedTableViewCell
-            cell.item = ItemFiltroStore.singleton.itens[keys[indexPath.section]]?[indexPath.item]
-            return cell
-        }else {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell2") as! BuscaSwitchTableViewCell
-            cell.item = ItemFiltroStore.singleton.itens[keys[indexPath.section]]?[indexPath.item]
-            
-            return cell
-        }
+        return cell
     }
     
     // MARK: - Table View Delegate
@@ -143,16 +129,6 @@ class BuscaViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 30
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-        if section == 5 {
-           
-            return 70
-        }
-        
-        return 1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -73,7 +73,6 @@ class EscolaStore: NSObject {
         CLGeocoder().geocodeAddressString("\(enderecoString)"){ (placemarks, error) in
             if let location = placemarks?.first?.location {
                 
-                print("Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)")
                 completion(location, nil)
             } else {
                 completion(nil, error)
@@ -105,6 +104,8 @@ class EscolaStore: NSObject {
                 DispatchQueue.main.async {
                     do {
                         if let d = data, let notaIdeb = try JSONSerialization.jsonObject(with: d, options: .allowFragments) as? [String: Any] {
+                            
+                            print(notaIdeb)
                             let notaIde : Ideb = Ideb(dic: notaIdeb)
                             cacheIDEB.setObject(notaIde, forKey: codEscola)
                             

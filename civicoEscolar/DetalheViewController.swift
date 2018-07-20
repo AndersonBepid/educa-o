@@ -34,10 +34,6 @@ class DetalheViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.voltarBt.customView?.layer.shadowRadius = 1
-        self.voltarBt.customView?.layer.shadowOpacity = 0.5
-        
-        self.navigationItem.title = "Detalhe"
         self.setupViews()
         self.tableCaract.delegate = self
         self.tableCaract.dataSource = self
@@ -50,6 +46,17 @@ class DetalheViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func call(_ sender: UIBarButtonItem) {
+        if let telefone = self.escola?.telefone?.replacingOccurrences(of: " ", with: "") {
+            if let url = URL(string: "tel://\(telefone)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
     
     
     func setupViews() {
@@ -124,8 +131,10 @@ extension DetalheViewController: UITableViewDataSource {
                 if let v = infra.value(forKey: c) as? String{
                     if v == "S" {
                         cell.detailTextLabel?.text = "Possui"
+                        cell.detailTextLabel?.textColor = #colorLiteral(red: 0.3490196078, green: 0.7607843137, blue: 0.6941176471, alpha: 1)
                     } else {
                         cell.detailTextLabel?.text = "Não possui"
+                        cell.detailTextLabel?.textColor = #colorLiteral(red: 0.3036265373, green: 0.3718696535, blue: 0.421957165, alpha: 1)
                     }
                 }
             }
